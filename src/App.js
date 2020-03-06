@@ -18,12 +18,12 @@ class App extends Component {
         <Navbar />
 
         <Switch>
-          <Route exact path="/" component={Home} />
-
+          <AnonRoute exact path="/" component={Home} />
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
 
-          <PrivateRoute exact path="/private" component={Private} />
+          <PrivateRoute exact path="/users-portal" component={Private} />
+          // other Private routes
         </Switch>
       </div>
     );

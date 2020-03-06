@@ -4,20 +4,20 @@ class Auth {
   constructor() {
     this.auth = axios.create({
       baseURL: "http://localhost:5000",
-      withCredentials: true
+      withCredentials: true                         // Axios syntaxt
     });
   }
 
-  signup({ username, password }) {
+  signup({ email, password }) {
     return this.auth
-      .post("/auth/signup", { username, password })
+      .post("/auth/signup", { email, password })
       .then(({ data }) => data);
     // .then((response) => response.data);
   }
 
-  login({ username, password }) {
+  login({ email, password }) {
     return this.auth
-      .post("/auth/login", { username, password })
+      .post("/auth/login", { email, password })
       .then(({ data }) => data);
     // .then((response) => response.data);
   }

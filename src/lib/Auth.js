@@ -18,7 +18,7 @@ const withAuth = WrappedComponent => {
                 login={login}
                 signup={signup}
                 logout={logout}
-                {...this.props}
+                {...this.props}                            // additinal data coming from browser   
               />
             );
           }}
@@ -59,16 +59,16 @@ class AuthProvider extends React.Component {
       );
   }
 
-  signup = (username, password) => {
+  signup = (email, password) => {
     authService
-      .signup({ username, password })
+      .signup({ email, password })
       .then(user => this.setState({ isLoggedIn: true, user }))
       .catch(err => console.log(err));
   };
 
-  login = (username, password) => {
+  login = (email, password) => {
     authService
-      .login({ username, password })
+      .login({ email, password })
       .then(user => this.setState({ isLoggedIn: true, user }))
       .catch(err => console.log(err));
   };
@@ -81,8 +81,8 @@ class AuthProvider extends React.Component {
   };
 
   render() {
-    const { isLoading, isLoggedIn, user } = this.state;
-    const { login, logout, signup } = this;
+    const { isLoading, isLoggedIn, user } = this.state;    // State
+    const { login, logout, signup } = this;                // Methods
 
     return (
       <Provider value={{ isLoading, isLoggedIn, user, login, logout, signup }}>
