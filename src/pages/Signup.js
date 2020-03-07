@@ -3,13 +3,21 @@ import { Link } from "react-router-dom";
 import { withAuth } from "./../lib/Auth";
 
 class Signup extends Component {
-  state = { email: "", password: "" };
+  state = { 
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    location: "",
+    skills: "",
+    preferedProject: ""
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { email, password } = this.state;
+    const { firstName, lastName, email, password, location, skills, preferedProject } = this.state;
 
-    this.props.signup(email, password);
+    this.props.signup(firstName, lastName, email, password, location, skills, preferedProject);
   };
 
   handleChange = event => {
@@ -18,12 +26,29 @@ class Signup extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { firstName, lastName, email, password, location, skills, preferedProject } = this.state;
     return (
       <div>
         <h1>Sign Up</h1>
 
         <form onSubmit={this.handleFormSubmit}>
+
+          <label>LastName:</label>
+          <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={this.handleChange}
+          />
+
+          <label>FirstName:</label>
+          <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={this.handleChange}
+          />
+
           <label>Email:</label>
           <input
             type="text"
@@ -40,6 +65,29 @@ class Signup extends Component {
             onChange={this.handleChange}
           />
 
+          <label>Location:</label>
+          <input
+            type="text"
+            name="location"
+            value={location}
+            onChange={this.handleChange}
+          />
+
+          <label>Skills:</label>
+          <input
+            type="text"
+            name="skills"
+            value={skills}
+            onChange={this.handleChange}
+          />
+
+          <label>Prefered Project Category:</label>
+          <input
+            type="text"
+            name="preferedProject"
+            value={preferedProject}
+            onChange={this.handleChange}
+          />
           <input type="submit" value="Signup" />
         </form>
 
