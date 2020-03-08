@@ -44,7 +44,7 @@ class App extends Component {
           <Route exact path="/see-user-detail/:id" component={SeeUserDetail} />
 
 
-          // other Private routes
+          
         </Switch>
       </div>
     );

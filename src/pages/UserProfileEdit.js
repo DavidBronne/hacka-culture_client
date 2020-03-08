@@ -49,8 +49,9 @@ class UserProfileEdit extends Component {
   //     email,
   //     location,
   //     skills,
-  //     preferedProject);
-  // }
+  //     preferedProject
+  // )
+//    }
 
   
   handelChange = event => {
