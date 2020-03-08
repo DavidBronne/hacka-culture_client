@@ -33,7 +33,7 @@ class Signup extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
 
-          <label>LastName:</label>
+          <label>Last Name:</label>
           <input
             type="text"
             name="lastName"
@@ -41,7 +41,7 @@ class Signup extends Component {
             onChange={this.handleChange}
           />
 
-          <label>FirstName:</label>
+          <label>First Name:</label>
           <input
             type="text"
             name="firstName"
