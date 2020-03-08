@@ -33,7 +33,7 @@ class App extends Component {
           <AnonRoute exact path="/login" component={Login} />
 
           <PrivateRoute exact path="/user-portal" component={UserPortal} />
-          <PrivateRoute exact path="/user-profile-edit" component={UserProfileEdit} />
+          <Route exact path="/user-profile-edit" component={UserProfileEdit} />
           <Route exact path="/initiator-dashboard" component={InitiatorDashboard} />
           <Route exact path="/initiator-add-project" component={InitiatorAddProject} />
           <Route exact path="/initiator-edit-project/:id" component={InitiatorEditProject} />

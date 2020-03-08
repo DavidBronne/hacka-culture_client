@@ -8,14 +8,19 @@ class Navbar extends Component {
 
     return (
       <nav className="navbar">
-        <Link to={"/"} id="home-btn">
-          <h4>Home</h4>
-        </Link>
+        
         {isLoggedIn 
         
         ? (
           <>
-            <p>Email: {user.email}</p>
+            <Link to={"/user-profile-edit"}>
+              <p>Email: {user.email}</p>
+            </Link>
+            
+            <Link to={"/"} id="home-btn">
+              <h4>Home</h4>
+            </Link>
+
             <button onClick={logout}>Logout</button>
           </>
         ) 
@@ -27,6 +32,11 @@ class Navbar extends Component {
               <button className="navbar-button">Login</button>{" "}
             </Link>
             <br />
+            
+            <Link to={"/"} id="home-btn">
+              <h4>Home</h4>
+            </Link>
+            
             <Link to="/signup">
               {" "}
               <button className="navbar-button">Sign Up</button>{" "}
