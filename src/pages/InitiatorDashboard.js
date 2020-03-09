@@ -3,7 +3,24 @@ import { withAuth } from "./../lib/Auth";
 
 import { Link } from "react-router-dom";
 
+import userService from "./../lib/user-service"
+
 class InitiatorDashboard extends Component {
+    
+    state = {
+        projects:null
+    }
+
+    componentDidMount () {
+        const { _id } = this.props.user;
+        userService.getOne(_id)
+            .then(user => {
+                // console.log('user', user.iniatorOnProject)
+                this.setState({projects: user.iniatorOnProject})
+            })
+            .catch((error) => console.log('error', error))
+    }
+    
     render() {
         return (
             <div>
@@ -14,9 +31,8 @@ class InitiatorDashboard extends Component {
                 </Link>
 
                 <h3>My Projects as Initiator</h3>
-
-                
-
+                {/* {this.state.projects.map(project => 
+                return <ProjectCard {...project}>)} */}
             </div>
         );
     }

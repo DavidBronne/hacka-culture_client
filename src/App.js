@@ -33,15 +33,15 @@ class App extends Component {
           <AnonRoute exact path="/login" component={Login} />
 
           <PrivateRoute exact path="/user-portal" component={UserPortal} />
-          <Route exact path="/user-profile-edit" component={UserProfileEdit} />
-          <Route exact path="/initiator-dashboard" component={InitiatorDashboard} />
-          <Route exact path="/initiator-add-project" component={InitiatorAddProject} />
-          <Route exact path="/initiator-edit-project/:id" component={InitiatorEditProject} />
-          <Route exact path="/participant-dashboard" component={ParticipantDashboard} />
-          <Route exact path="/participant-seek-project" component={ParticipantSeekProject} />
-          <Route exact path="/participant-edit-project/:id" component={ParticipantEditProject} />
-          <Route exact path="/seek-users" component={SeekUsers} />
-          <Route exact path="/see-user-detail/:id" component={SeeUserDetail} />
+          <PrivateRoute exact path="/user-profile-edit" component={UserProfileEdit} />
+          <PrivateRoute exact path="/initiator-dashboard" component={InitiatorDashboard} />
+          <PrivateRoute exact path="/initiator-add-project" component={InitiatorAddProject} />
+          <PrivateRoute exact path="/initiator-edit-project/:id" component={InitiatorEditProject} />
+          <PrivateRoute exact path="/participant-dashboard" component={ParticipantDashboard} />
+          <PrivateRoute exact path="/participant-seek-project" component={ParticipantSeekProject} />
+          <PrivateRoute exact path="/participant-edit-project/:id" component={ParticipantEditProject} />
+          <PrivateRoute exact path="/seek-users" component={SeekUsers} />
+          <PrivateRoute exact path="/see-user-detail/:id" component={SeeUserDetail} />
 
 
           

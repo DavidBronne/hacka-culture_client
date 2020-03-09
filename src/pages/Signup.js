@@ -17,11 +17,21 @@ class Signup extends Component {
     event.preventDefault();
     const { firstName, lastName, email, password, location, skills, preferedProject } = this.state;
 
-    this.props.signup(firstName, lastName, email, password, location, skills, preferedProject);
+    this.props.signup(firstName, lastName, email, password, location, skills, preferedProject)
   };
 
   handleChange = event => {
-    const { name, value } = event.target;
+    let { name, value, type, options } = event.target;
+
+    if(type==="select-multiple") {
+      value = [];
+      for (var i = 0; i < options.length; i++) {
+        if (options[i].selected) {
+          value.push(options[i].value);
+        }
+      }
+      console.log('value multi select', value);
+    }
     this.setState({ [name]: value });
   };
 
@@ -74,20 +84,19 @@ class Signup extends Component {
           />
 
           <label>Skills:</label>
-          <input
-            type="text"
-            name="skills"
-            value={skills}
-            onChange={this.handleChange}
-          />
+          <select name="skills" value={skills} onChange={this.handleChange} multiple>
+              <option value="data">data</option>
+              <option value="WebDev">WebDev</option>
+              <option value="UXUI">UXUI</option>
+          </select>
 
           <label>Prefered Project Category:</label>
-          <input
-            type="text"
-            name="preferedProject"
-            value={preferedProject}
-            onChange={this.handleChange}
-          />
+          <select name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
+              <option value="NGO">NGO</option>
+              <option value="Hackathon">Hackathon</option>
+              <option value="Business">Business</option>
+          </select>
+          
           <input type="submit" value="Signup" />
         </form>
 
