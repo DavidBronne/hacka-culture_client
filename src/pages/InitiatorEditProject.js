@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { withAuth } from "./../lib/Auth";
 
 class InitiatorEditProject extends Component {
+    
+    
+    
     render () {
         return (
             <div>

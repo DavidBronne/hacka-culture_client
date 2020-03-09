@@ -5,16 +5,21 @@ import { Link } from "react-router-dom";
 
 import userService from "./../lib/user-service"
 
+import InitiatorDashboardCard from "./../components/InitiatorDashboardProjectCard"
+
 class InitiatorDashboard extends Component {
     
     state = {
-        projects:null
+        projects: null
+        //[aaaaadddddazzzzz,qqqqqqqqqq]
+        //[5e623b502540e5986089d876,5e623c948776f098c17108bd]
+        
     }
 
     componentDidMount () {
         const { _id } = this.props.user;
         userService.getOne(_id)
-            .then(user => {
+            .then( (user) => {
                 // console.log('user', user.iniatorOnProject)
                 this.setState({projects: user.iniatorOnProject})
             })
@@ -31,10 +36,16 @@ class InitiatorDashboard extends Component {
                 </Link>
 
                 <h3>My Projects as Initiator</h3>
-                {/* {this.state.projects.map(project => 
-                return <ProjectCard {...project}>)} */}
+ 
+                {
+                    this.state.projects.map( (project) => {
+                        
+                        return <InitiatorDashboardCard {...project}/>
+                    })
+                }
+   
             </div>
-        );
+        )
     }
  }
 

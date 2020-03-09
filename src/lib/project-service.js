@@ -20,22 +20,31 @@ class Project {
             requiredDataSkill,			
             requiredWebdevSkill,		
             requiredUxuiSkill } ) {
-        return this.project
-        .post(
-            "/create",
-            { 
-                projectName,
-                description,
-                // initiator,
-                githubUrl,
-                status,  
-                location,			
-                projectCategory,
-                requiredDataSkill,			
-                requiredWebdevSkill,		
-                requiredUxuiSkill })
-        .then(({createdProject}) => createdProject)
+        
+                return this.project
+                    .post(
+                        "/project/create",
+                        { 
+                            projectName,
+                            description,
+                            // initiator,
+                            githubUrl,
+                            status,  
+                            location,			
+                            projectCategory,
+                            requiredDataSkill,			
+                            requiredWebdevSkill,		
+                            requiredUxuiSkill })
+                    .then(({createdProject}) => createdProject)
         }
+ 
+        getOne({ _id }) {
+          return this.project
+            .get("/project", { _id })
+            .then(({ project}) => project)
+        }
+
+        
 }
 
 const projectService = new Project();
