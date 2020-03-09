@@ -45,7 +45,8 @@ class UserProfileEdit extends Component {
       preferedProject 
     } = this.state;
 
-    userService.updateUser({firstName,
+    userService.updateUser({
+      firstName,
       lastName,
       email,
       location,

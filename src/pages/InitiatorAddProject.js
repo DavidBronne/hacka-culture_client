@@ -24,9 +24,9 @@ class InitiatorAddProject extends Component {
     componentDidMount () {
         const { user } = this.props;
 
-        // this.setState({
-        //     initiator:user._id
-        // })
+        this.setState({
+            initiator:user._id
+        })
     }
     
     handleFormSubmit = event => {

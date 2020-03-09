@@ -13,7 +13,7 @@ class InitiatorDashboardCard extends Component{
 
     componentDidMount() {
         const { _id } = this.props.project
-        projectService.getOne(_id)
+        projectService.getOne( {_id} )
             .then((project) => {
                 this.setState({project:project})
             })

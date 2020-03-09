@@ -36,11 +36,11 @@ class Project {
                             requiredWebdevSkill,		
                             requiredUxuiSkill })
                     .then(({createdProject}) => createdProject)
-        }
- 
-        getOne({ _id }) {
-          return this.project
-            .get("/project", { _id })
+        }     
+
+        getOne(id) {
+            return this.project
+            .get(`/project/${id}`)
             .then(({ project}) => project)
         }
 
