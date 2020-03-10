@@ -56,7 +56,18 @@ class Project {
             .get('/project/all')
             .then(({ data }) => data)
         }
+
+        applyToProject(id) {
+            return this.project
+            .put(`/project/apply/${id}`)
+            .then(({ data }) => data)
+        }
         
+        acceptParticipant(projectId, userId) {
+            return this.project
+            .put(`/project/accept/${projectId}/${userId}`)
+            .then(({ data }) => data)
+        }
 }
 
 const projectService = new Project();

@@ -17,54 +17,30 @@ class ParticipantSeekProject extends Component {
         requiredDataSkill: "",			
         requiredWebdevSkill: "",		
         requiredUxuiSkill: "",
-        projects:"",
-        isLoading:true
+        projects:[],
+        isLoading:true,
+        projectsFiltered: []
     }
     
     componentDidMount () {
+        this.getAllProject()
+
+    }
+    
+    getAllProject = () => {
         projectService.getAll()
             .then( (allProjects) => {
                 console.log('allProjects in componentDidMount', allProjects)
-                this.setState({projects: allProjects, isLoading:false})
+                this.setState({projects: allProjects, projectsFiltered: allProjects,isLoading:false})
             })
             .catch((error) => console.log('error', error))
     }
-    
-    
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-        
-    //     const { 
-    //         projectName,
-    //         description,
-    //         // initiator,
-    //         githubUrl,
-    //         status,  
-    //         location,			
-    //         projectCategory,
-    //         requiredDataSkill,			
-    //         requiredWebdevSkill,		
-    //         requiredUxuiSkill 
-    //     } = this.state;
-
-    //     console.log('this.state for creating', this.state)
-
-    //     projectService.createProject({
-    //         projectName,
-    //         description,
-    //         initiator: this.props.user._id,
-    //         githubUrl,
-    //         status,  
-    //         location,			
-    //         projectCategory,
-    //         requiredDataSkill,			
-    //         requiredWebdevSkill,		
-    //         requiredUxuiSkill
-    //     })
-    //     .then(this.props.history.push(`/initiator-dashboard`))
-    //     .catch((error) => console.log('error', error))
-    // }
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.projectFilter(this.state.projects)
+       
+    }
     
     handleChange = event => {
         let { name, value, type, options } = event.target;
@@ -81,16 +57,37 @@ class ParticipantSeekProject extends Component {
         }
         
         this.setState({ [name]: value });
+        console.log('this.state after change', this.state)
     }
 
     projectFilter = allProjects => {
-        allProjects.filter((project) => {
-            return project.status === this.state.status || 	
-            project.projectCategory  || 
-            project.requiredDataSkill >= this.state.requiredDataSkill ||			
-            project.requiredWebdevSkill >= this.state.requiredWebdevSkill ||		
-            project.requiredUxuiSkill >= this.state.requiredUxuiSkill
-        })
+        
+
+        const { 
+            status, 			
+            projectCategory,
+            requiredDataSkill,			
+            requiredWebdevSkill,		
+            requiredUxuiSkill 
+        } = this.state;
+        
+        if(!status && !projectCategory && !requiredDataSkill && ! requiredWebdevSkill  && !requiredUxuiSkill) {
+            this.getAllProject()
+        } else {
+            console.log('this.state in filter', this.state)
+            
+            const projectsFiltered = allProjects.filter((project) => {
+                console.log('project.status', project.status)
+                return (this.state.status.includes(project.status) || !this.state.status)  &&	
+                this.state.projectCategory.includes(project.projectCategory)   &&
+                project.requiredDataSkill >= this.state.requiredDataSkill &&			
+                project.requiredWebdevSkill >= this.state.requiredWebdevSkill &&		
+                project.requiredUxuiSkill >= this.state.requiredUxuiSkill
+            })
+    
+            this.setState({projectsFiltered})
+        }
+        
     }
     
     render() {
@@ -117,7 +114,6 @@ class ParticipantSeekProject extends Component {
                     </Link>
                 
                 {/* <form onSubmit={this.handleFormSubmit}> */}
-                    <form>
                     {/* <div>
                         <label>Project Name</label>
                         <input
@@ -145,6 +141,7 @@ class ParticipantSeekProject extends Component {
                         onChange={this.handleChange}
                         />
                     </div> */}
+                    <form onSubmit={this.handleFormSubmit}>
                     <div>
                         <label>Status</label>
                         <select name="status" value={status} onChange={this.handleChange} multiple>
@@ -198,19 +195,22 @@ class ParticipantSeekProject extends Component {
                         />
                     </div>
                     
-                    {/* <input type="submit" value="Kick off" /> */}
+                    <input type="submit" value="Filter" />
                 </form>
             
                 <h3>Result</h3>
+                {console.log('this.state.projects in render',this.state.projects)}
                 { 
+                    
                     this.state.isLoading 
                     ? null 
                         
-                    :  console.log('this.state.projects in render',this.state.projects)
-                        this.projectFilter(this.state.allProjects)
+                    :   this.state.projectsFiltered
                             .map( (project) => {
                             
                             return <ParticipantSeekProjectCard key={ project._id } {...project}/>
+                    
+                       
                     })
                     
                     

@@ -7,25 +7,14 @@ import projectService from "./../lib/project-service"
 import { render } from "@testing-library/react";
 
 class AcceptedParticipantsCard extends Component{
-    state = {
-        user:null
-    }
 
-    componentDidMount() {
-        const { _id } = this.props.user
-        userService.getOne( {_id} )
-            .then((user) => {
-                this.setState({user:user})
-            })
-            .catch((error) => console.log('error', error))
-    }
 
     render() {
         return (
             <div>
-                <Link to="/see-user-detail/:id">
-                    <h4>{ this.state.user.firstName }</h4>
-                    <h4>{ this.state.user.skills }</h4>
+                <Link to={`/see-user-detail/${this.props.id}`}>
+                    <h4>{ this.props.firstName }</h4>
+                    <h4>{ this.props.skills }</h4>
                 </Link>
                 //delete button -> onCLick: related backEnd routes
 

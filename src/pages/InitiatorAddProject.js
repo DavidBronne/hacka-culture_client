@@ -11,9 +11,9 @@ class InitiatorAddProject extends Component {
         description: "",
         // initiator: "",
         githubUrl: "",
-        status: "",  
+        status: "planning",  
         location: "",			
-        projectCategory: "",
+        projectCategory: "NGO",
         requiredDataSkill: "",			
         requiredWebdevSkill: "",		
         requiredUxuiSkill: ""
@@ -21,9 +21,7 @@ class InitiatorAddProject extends Component {
     
     
 
-    componentDidMount () {
-   
-    }
+  
     
     handleFormSubmit = event => {
         event.preventDefault();
@@ -64,16 +62,6 @@ class InitiatorAddProject extends Component {
     handleChange = event => {
         let { name, value, type, options } = event.target;
         console.log('type', type)
-        if(type==="select-multiple") {
-          value = [];
-          for (var i = 0; i < options.length; i++) {
-            if (options[i].selected) {
-              value.push(options[i].value);
-                console.log('value', value)
-            }
-          }
-          // console.log('value multi select', value);
-        }
         
         this.setState({ [name]: value });
     }
@@ -128,7 +116,7 @@ class InitiatorAddProject extends Component {
                     </div>
                     <div>
                         <label>Status</label>
-                        <select name="status" value={status} onChange={this.handleChange} multiple>
+                        <select name="status" value={status} onChange={this.handleChange} >
                             <option value="planning">planning</option>
                             <option value="execution">execution</option>
                             <option value="closed">closed</option>
@@ -145,7 +133,7 @@ class InitiatorAddProject extends Component {
                     </div>
                     <div>
                         <label>Project Category</label>
-                        <select name="projectCategory" value={projectCategory} onChange={this.handleChange} multiple>
+                        <select name="projectCategory" value={projectCategory} onChange={this.handleChange} >
                             <option value="NGO">NGO</option>
                             <option value="Hackathon">Hackathon</option>
                             <option value="Business">Business</option>

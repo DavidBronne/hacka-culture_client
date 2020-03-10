@@ -106,14 +106,7 @@ class InitiatorEditProject extends Component {
     handleChange = event => {
         let { name, value, type, options } = event.target;
         
-        if(type==="select-multiple") {
-          value = [];
-          for (var i = 0; i < options.length; i++) {
-            if (options[i].selected) {
-              value.push(options[i].value); 
-            }
-          }
-        }
+        
         this.setState({ [name]: value });
     } 
 
@@ -153,7 +146,7 @@ class InitiatorEditProject extends Component {
                     </div>
                     <div>
                         <label>Status</label>
-                        <select name="status" value={this.state.status} onChange={this.handleChange} multiple>
+                        <select name="status" value={this.state.status} onChange={this.handleChange} >
                             <option value="planning">planning</option>
                             <option value="execution">execution</option>
                             <option value="closed">closed</option>
@@ -170,7 +163,7 @@ class InitiatorEditProject extends Component {
                     </div>
                     <div>
                         <label>Project Category</label>
-                        <select name="projectCategory" value={this.state.projectCategory} onChange={this.handleChange} multiple>
+                        <select name="projectCategory" value={this.state.projectCategory} onChange={this.handleChange} >
                             <option value="NGO">NGO</option>
                             <option value="Hackathon">Hackathon</option>
                             <option value="Business">Business</option>
@@ -213,7 +206,7 @@ class InitiatorEditProject extends Component {
                     ? null
                     :
                     this.state.appliedParticipants.map( (user) => {  
-                        return <AppliedParticipantsCard {...user}/>
+                        return <AppliedParticipantsCard key={user._id} projectId={this.props.match.params.id} {...user}/>
                     })
                     }
                     
@@ -223,7 +216,7 @@ class InitiatorEditProject extends Component {
                     ? null
                     :
                     this.state.acceptedParticipants.map( (user) => {  
-                        return <AcceptedParticipantsCard {...user}/>
+                        return <AcceptedParticipantsCard key={user._id} {...user}/>
                     })
                     }
                     

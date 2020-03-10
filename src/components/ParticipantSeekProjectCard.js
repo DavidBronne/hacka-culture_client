@@ -7,8 +7,7 @@ import projectService from "../lib/project-service"
 import { render } from "@testing-library/react";
 
 class ParticipantSeekProjectCard extends Component{
-    
-    
+
 
     render() {
         // console.log('PTOPS', this.props._id)

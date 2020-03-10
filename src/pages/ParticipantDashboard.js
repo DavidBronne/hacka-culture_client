@@ -43,7 +43,7 @@ class ParticipantDashboard extends Component {
                     {
                         this.state.appliedOnProject.map( (project) => {
                             
-                            return <ParticipantDashboardCard {...project}/>
+                            return <ParticipantDashboardCard key={project._id} {...project}/>
                         })
                     }
 
@@ -51,7 +51,7 @@ class ParticipantDashboard extends Component {
                     {
                         this.state.acceptedOnProject.map( (project) => {
                             
-                            return <ParticipantDashboardCard {...project}/>
+                            return <ParticipantDashboardCard key={project._id} {...project}/>
                         })
                     }
             </div>

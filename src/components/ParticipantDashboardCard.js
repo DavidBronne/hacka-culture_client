@@ -7,25 +7,17 @@ import projectService from "../lib/project-service"
 import { render } from "@testing-library/react";
 
 class ParticipantDashboardCard extends Component{
-    state = {
-        project:null
-    }
 
-    componentDidMount() {
-        const { _id } = this.props.project
-        projectService.getOne( {_id} )
-            .then((project) => {
-                this.setState({project:project})
-            })
-            .catch((error) => console.log('error', error))
-    }
+
+    componentDidMount() {}
+
 
     render() {
         return (
             <div>
-                <Link to="/initiator-edit-project/:_id">
-                    <h4>{ this.state.project.projectName }</h4>
-                    <h4>{ this.state.project.projectCategory }</h4>
+                <Link to={`/participant-edit-project/${this.props._id}`}>
+                    <h4>{ this.props.projectName }</h4>
+                    <h4>{ this.props.projectCategory }</h4>
                 </Link>   
             </div>
         )

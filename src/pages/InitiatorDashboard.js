@@ -19,15 +19,25 @@ class InitiatorDashboard extends Component {
 
     componentDidMount () {
         const { _id } = this.props.user;
+        this.getInitiatorProjects()
+    }
+
+    componentDidUpdate (prevState) {
+        // if(prevState.projects != this.state.projects) {
+        //     this.getInitiatorProjects()
+        // }
+    }
+
+    getInitiatorProjects = () => {
+        const { _id } = this.props.user;
         userService.getOne(_id)
             .then( (user) => {
                 // console.log('user', user.iniatorOnProject)
                 this.setState({projects: user.initiatorOnProject, isLoading:false})
             })
             .catch((error) => console.log('error', error))
-    }
     
-    
+        }
 
     render() {
         return (
