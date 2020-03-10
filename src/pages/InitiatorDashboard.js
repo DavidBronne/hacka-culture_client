@@ -3,9 +3,9 @@ import { withAuth } from "./../lib/Auth";
 
 import { Link } from "react-router-dom";
 
-import userService from "./../lib/user-service"
+import userService from "./../lib/user-service";
 
-import InitiatorDashboardCard from "./../components/InitiatorDashboardProjectCard"
+import InitiatorDashboardCard from "../components/InitiatorDashboardCard"
 
 class InitiatorDashboard extends Component {
     

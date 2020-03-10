@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { withAuth } from "./../lib/Auth";
-import userService from "./../lib/user-service"
-import projectService from "./../lib/project-service"
+import { withAuth } from "../lib/Auth";
+import userService from "../lib/user-service"
+import projectService from "../lib/project-service"
 
 import { render } from "@testing-library/react";
 
