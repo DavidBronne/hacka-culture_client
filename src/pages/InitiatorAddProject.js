@@ -22,11 +22,7 @@ class InitiatorAddProject extends Component {
     
 
     componentDidMount () {
-        const { user } = this.props;
-
-        this.setState({
-            initiator:user._id
-        })
+   
     }
     
     handleFormSubmit = event => {
@@ -52,7 +48,7 @@ class InitiatorAddProject extends Component {
         projectService.createProject({
             projectName,
             description,
-            // initiator,
+            initiator: this.props.user._id,
             githubUrl,
             status,  
             location,			
@@ -158,7 +154,7 @@ class InitiatorAddProject extends Component {
                     <div>
                     <label>Required Data Skill</label>
                         <input
-                        type="text"
+                        type="number"
                         name="requiredDataSkill"
                         value={requiredDataSkill}
                         onChange={this.handleChange}
@@ -167,7 +163,7 @@ class InitiatorAddProject extends Component {
                     <div>
                     <label>Required Webdev Skill</label>
                         <input
-                        type="text"
+                        type="number"
                         name="requiredWebdevSkill"
                         value={requiredWebdevSkill}
                         onChange={this.handleChange}
@@ -176,7 +172,7 @@ class InitiatorAddProject extends Component {
                     <div>
                         <label>Required Uxui Skill</label>
                         <input
-                        type="text"
+                        type="number"
                         name="requiredUxuiSkill"
                         value={requiredUxuiSkill}
                         onChange={this.handleChange}

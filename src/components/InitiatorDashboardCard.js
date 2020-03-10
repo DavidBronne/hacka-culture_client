@@ -7,28 +7,20 @@ import projectService from "../lib/project-service"
 import { render } from "@testing-library/react";
 
 class InitiatorDashboardCard extends Component{
-    state = {
-        project:null
-    }
-
-    componentDidMount() {
-        const { _id } = this.props.project
-        projectService.getOne( {_id} )
-            .then((project) => {
-                this.setState({project:project})
-            })
-            .catch((error) => console.log('error', error))
-    }
+    
+    
 
     render() {
+        console.log('PTOPS', this.props._id)
+        console.log('TYPE', typeof this.props._id)
         return (
-            <div>
-                <Link to="/initiator-edit-project/:_id">
-                    <h4>{ this.state.project.projectName }</h4>
-                    <h4>{ this.state.project.projectCategory }</h4>
-                    <h4>{ this.state.project.requiredDataSkill }</h4>
-                    <h4>{ this.state.project.requiredWebdevSkill }</h4>
-                    <h4>{ this.state.project.requiredUxuiSkill }</h4>
+            <div >
+                <Link to={`/initiator-edit-project/${this.props._id}`}>
+                    <h4>{ this.props.projectName }</h4>
+                    <h4>{ this.props.projectCategory }</h4>
+                    <h4>{ this.props.requiredDataSkill }</h4>
+                    <h4>{ this.props.requiredWebdevSkill }</h4>
+                    <h4>{ this.props.requiredUxuiSkill }</h4>
                 </Link>
                 
             </div>

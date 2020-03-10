@@ -41,7 +41,14 @@ class Project {
         getOne(id) {
             return this.project
             .get(`/project/${id}`)
-            .then(({ project}) => project)
+            .then(({ data}) => data)
+        }
+
+        updateProject(id, projectToUpdate){
+                return this.project
+                .put(`/project/edit/${id}`, projectToUpdate)
+                .then(({ data }) => data)
+
         }
 
         

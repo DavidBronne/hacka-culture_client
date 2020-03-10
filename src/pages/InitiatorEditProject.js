@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { withAuth } from "./../lib/Auth";
 
 import projectService from "./../lib/project-service";
+import userService from "./../lib/user-service";
 
-import AppliedParticipantsCard from "./../component/AppliedParticipantsCard";
-import AcceptedParticipantsCard from "./../component/AcceptedParticipantsCard";
+import AppliedParticipantsCard from "./../components/AppliedParticipantsCard";
+import AcceptedParticipantsCard from "./../components/AcceptedParticipantsCard";
 
 class InitiatorEditProject extends Component {
      state = {
@@ -19,14 +20,17 @@ class InitiatorEditProject extends Component {
             requiredWebdevSkill:"",		
             requiredUxuiSkill:"",
             appliedParticipants:"",
-            acceptedParticipants:""
+            acceptedParticipants:"",
+            isLoading:true
      }
     
     componentDidMount() {
         const { id } = this.props.match.params;
+        console.log('ID', id)
         
-        projectService.getOne( {id} )
+        projectService.getOne(id)
             .then((project) => {
+                console.log('project in mount', project)
                 const { 
                     projectName,
                     description,
@@ -54,7 +58,11 @@ class InitiatorEditProject extends Component {
                     requiredWebdevSkill,		
                     requiredUxuiSkill, 
                     appliedParticipants,
-                    acceptedParticipants} )
+                    acceptedParticipants,
+                    isLoading:false
+                } )
+
+                console.log('this.state', this.state)
             })
             .catch((err) => {
                 console.log(err)})
@@ -74,9 +82,8 @@ class InitiatorEditProject extends Component {
             requiredWebdevSkill,		
             requiredUxuiSkill 
         } = this.state;
-    
-        userService.updateProject({
-            projectName,
+
+        const projectToUpdate = {projectName,
             description,
             initiator,
             githubUrl,
@@ -85,10 +92,13 @@ class InitiatorEditProject extends Component {
             projectCategory,
             requiredDataSkill,			
             requiredWebdevSkill,		
-            requiredUxuiSkill}
-        )
+            requiredUxuiSkill }
+    
+            const { id } = this.props.match.params
+        projectService.updateProject(id, projectToUpdate)
+        
         .then((updatedProject) => {
-          console.log('updateUser', updatedProject)
+          console.log('updatedUser', updatedProject)
         })
         .catch((error) => console.log(error))
     }
@@ -109,6 +119,7 @@ class InitiatorEditProject extends Component {
 
     render () {
         return (
+    
             <div>
                 <h1>Initiator Edit Project</h1>
             
@@ -118,7 +129,7 @@ class InitiatorEditProject extends Component {
                         <input
                         type="text"
                         name="projectName"
-                        value={projectName}
+                        value={this.state.projectName}
                         onChange={this.handleChange}
                         />
                     </div>
@@ -127,7 +138,7 @@ class InitiatorEditProject extends Component {
                         <input
                         type="text"
                         name="description"
-                        value={description}
+                        value={this.state.description}
                         onChange={this.handleChange}
                         />
                     </div>
@@ -136,13 +147,13 @@ class InitiatorEditProject extends Component {
                         <input
                         type="text"
                         name="githubUrl"
-                        value={githubUrl}
-                        //onChange={this.handleChange}
+                        value={this.state.githubUrl}
+                        readOnly
                         />
                     </div>
                     <div>
                         <label>Status</label>
-                        <select name="status" value={status} onChange={this.handleChange} multiple>
+                        <select name="status" value={this.state.status} onChange={this.handleChange} multiple>
                             <option value="planning">planning</option>
                             <option value="execution">execution</option>
                             <option value="closed">closed</option>
@@ -153,13 +164,13 @@ class InitiatorEditProject extends Component {
                         <input
                         type="text"
                         name="location"
-                        value={location}
+                        value={this.state.location}
                         onChange={this.handleChange}
                         />
                     </div>
                     <div>
                         <label>Project Category</label>
-                        <select name="projectCategory" value={projectCategory} onChange={this.handleChange} multiple>
+                        <select name="projectCategory" value={this.state.projectCategory} onChange={this.handleChange} multiple>
                             <option value="NGO">NGO</option>
                             <option value="Hackathon">Hackathon</option>
                             <option value="Business">Business</option>
@@ -170,7 +181,7 @@ class InitiatorEditProject extends Component {
                         <input
                         type="text"
                         name="requiredDataSkill"
-                        value={requiredDataSkill}
+                        value={this.state.requiredDataSkill}
                         onChange={this.handleChange}
                         />
                     </div>
@@ -179,7 +190,7 @@ class InitiatorEditProject extends Component {
                         <input
                         type="text"
                         name="requiredWebdevSkill"
-                        value={requiredWebdevSkill}
+                        value={this.state.requiredWebdevSkill}
                         onChange={this.handleChange}
                         />
                     </div>
@@ -188,7 +199,7 @@ class InitiatorEditProject extends Component {
                         <input
                         type="text"
                         name="requiredUxuiSkill"
-                        value={requiredUxuiSkill}
+                        value={this.state.requiredUxuiSkill}
                         onChange={this.handleChange}
                         />
                     </div>
@@ -196,15 +207,21 @@ class InitiatorEditProject extends Component {
                     <input type="submit" value="Save" />
                 </form>
 
-                <h3>Applicants</h3>
+                <h3>Applicant</h3>
                     {
+                        this.state.isLoading
+                    ? null
+                    :
                     this.state.appliedParticipants.map( (user) => {  
                         return <AppliedParticipantsCard {...user}/>
                     })
                     }
                     
-                <h3>Applicants</h3>
+                <h3>Accepted</h3>
                     {
+                        this.state.isLoading
+                    ? null
+                    :
                     this.state.acceptedParticipants.map( (user) => {  
                         return <AcceptedParticipantsCard {...user}/>
                     })

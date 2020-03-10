@@ -10,7 +10,8 @@ import InitiatorDashboardCard from "../components/InitiatorDashboardCard"
 class InitiatorDashboard extends Component {
     
     state = {
-        projects: null
+        projects: [],
+        isLoading: true
         //[aaaaadddddazzzzz,qqqqqqqqqq]
         //[5e623b502540e5986089d876,5e623c948776f098c17108bd]
         
@@ -21,7 +22,7 @@ class InitiatorDashboard extends Component {
         userService.getOne(_id)
             .then( (user) => {
                 // console.log('user', user.iniatorOnProject)
-                this.setState({projects: user.iniatorOnProject})
+                this.setState({projects: user.initiatorOnProject, isLoading:false})
             })
             .catch((error) => console.log('error', error))
     }
@@ -37,10 +38,12 @@ class InitiatorDashboard extends Component {
 
                 <h3>My Projects as Initiator</h3>
  
-                {
-                    this.state.projects.map( (project) => {
-                        
-                        return <InitiatorDashboardCard {...project}/>
+                { 
+                    this.state.isLoading 
+                    ? null 
+                    : this.state.projects.map( (project) => {
+                        console.log('PROJECT', project)
+                        return <InitiatorDashboardCard key={ project._id } {...project}/>
                     })
                 }
    
