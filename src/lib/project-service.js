@@ -51,6 +51,11 @@ class Project {
 
         }
 
+        getAll() {
+            return this.project
+            .get('/project/all')
+            .then(({ data }) => data)
+        }
         
 }
 
