@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import projectService from "./../lib/project-service";
 import userService from "./../lib/user-service";
 
-import ParticipantEditPropjectCard from "./../components/ParticipantEditPropjectCard";
+import AcceptedParticipantsCard from "./../components/AcceptedParticipantsCard";
 
 class ParticipantEditProject extends Component {
     state = {
@@ -85,11 +85,26 @@ handleFormSubmit = event => {
     
     render () {
         return (
-            <di>
+            <div>
                 <h1>Participant Edit Project</h1>
                 <h3>Project Details</h3>
 
+                <h5>Project Name</h5>
                 <p>{this.state.projectName}</p>
+                <h5>description</h5>
+                <p>{this.state.description}</p>
+                {/* <h5>initiator</h5>
+                <p>{this.state.initiator}</p> */}
+                <h5>projectCategory</h5>
+                <p>{this.state.projectCategory}</p>
+                <h5>requiredDataSkill</h5>
+                <p>{this.state.requiredDataSkill}</p>
+                <h5>requiredWebdevSkill</h5>
+                <p>{this.state.requiredWebdevSkill}</p>
+                <h5>requiredUxuiSkill</h5>
+                <p>{this.state.requiredUxuiSkill}</p>
+                <h5>githubUrl</h5>
+                <p>{this.state.githubUrl}</p>
 
                 <form onSubmit={this.handleFormSubmit}>
                     <button type="submit">Apply</button>
@@ -102,9 +117,17 @@ handleFormSubmit = event => {
                 </Link>
 
                 <h3>Accepted participants</h3>
-                
+                    {
+                        this.state.isLoading
+                    ? null
+                    :
+                    this.state.acceptedParticipants.map( (user) => {  
+                        return <AcceptedParticipantsCard key={user._id} {...user}/>
+                    })
+                    }
 
-            </di>
+
+            </div>
         )
     }
 }

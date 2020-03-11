@@ -12,11 +12,11 @@ class AcceptedParticipantsCard extends Component{
     render() {
         return (
             <div>
-                <Link to={`/see-user-detail/${this.props.id}`}>
+                <Link to={`/see-user-detail/${this.props._id}`}>
                     <h4>{ this.props.firstName }</h4>
                     <h4>{ this.props.skills }</h4>
                 </Link>
-                //delete button -> onCLick: related backEnd routes
+                
 
             </div>
         )
