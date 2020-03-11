@@ -94,8 +94,12 @@ handleFormSubmit = event => {
                 <p>{this.state.projectName}</p>
                 <h5>description</h5>
                 <p>{this.state.description}</p>
-                {/* <h5>initiator</h5>
-                <p>{this.state.initiator}</p> */}
+                
+                <Link to={`/see-user-detail/${this.state.initiator._id}`}>
+                <h5>initiator</h5>
+                <p>{this.state.initiator.firstName}</p>
+                </Link>
+
                 <h5>projectCategory</h5>
                 <p>{this.state.projectCategory}</p>
                 <h5>requiredDataSkill</h5>
@@ -107,7 +111,15 @@ handleFormSubmit = event => {
                 <h5>githubUrl</h5>
                 <p>{this.state.githubUrl}</p>
                 <h5>appliedParticipants</h5>
-                {/* <p>{this.state.appliedParticipants}</p> */}
+                {
+                    this.state.isLoading
+                    ? null
+                    :
+                    this.state.appliedParticipants.map((user) => {
+                        return <Link to={`/see-user-detail/${user._id}`}>
+                        {user.firstName}
+                        </Link>})
+                }
 
                 <form onSubmit={this.handleFormSubmit}>
                     <button type="submit">Apply</button>
