@@ -3,6 +3,8 @@ import { withAuth } from "./../lib/Auth";
 
 import userService from "./../lib/user-service";
 
+import ParticipantDashboardCard from "./../components/ParticipantDashboardCard"
+
 
 class SeeUserDetail extends Component {
     state= {
@@ -47,7 +49,7 @@ class SeeUserDetail extends Component {
                     acceptedOnProject,
                     isLoading : false
                 })
-                console.log('this state', this.state)
+                console.log('this state in USER DETAIL', this.state)
             })
             .catch((err) => {
                 console.log(err)})
@@ -75,16 +77,40 @@ class SeeUserDetail extends Component {
                 {/* <p>{
                     this.state.initiatorOnProject.map( (project) => { return project.projectName})
                     }</p> */}
-                {/* <p>{
-                this.state.initiatorOnProject[0]
-                }</p> */}
-                {/* <p>{
-                [this.state.initiatorOnProject]
-                }</p> */}
-                <h5>applied On Projects</h5>
-                {/* <p>{this.state.appliedOnProject}</p> */}
-                <h5>accepted On Projects</h5>
-                {/* <p>{this.state.acceptedOnProject}</p> */}
+
+                <h3>Initiator on Projects</h3>
+                    {
+                        this.state.isLoading
+                    ? null
+                    :
+                        this.state.initiatorOnProject.map( (project) => {
+                            
+                            return <ParticipantDashboardCard key={project._id} {...project}/>
+                        })
+                    }
+
+                <h3>Applied on Projects</h3>
+                    {
+                        this.state.isLoading
+                    ? null
+                    :
+                        this.state.appliedOnProject.map( (project) => {
+                            
+                            return <ParticipantDashboardCard key={project._id} {...project}/>
+                        })
+                    }
+                
+                <h3>My accepted Projects</h3>
+                    {
+                        this.state.isLoading
+                    ? null
+                    :
+                        this.state.acceptedOnProject.map( (project) => {
+                            
+                            return <ParticipantDashboardCard key={project._id} {...project}/>
+                        })
+                    }
+
             </div>
         )
     }
