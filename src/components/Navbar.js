@@ -7,43 +7,46 @@ class Navbar extends Component {
     const { user, logout, isLoggedIn } = this.props;
 
     return (
-      <nav className="navbar">
-        
-        {isLoggedIn 
-        
-        ? (
-          <>
-            <Link to={"/user-profile-edit"}>
-              <p>Email: {user.email}</p>
-            </Link>
-            
-            <Link to={"/"} id="home-btn">
-              <h4>Home</h4>
-            </Link>
+      <div>
+        <nav className="navbar">
+          
+          {isLoggedIn 
+          
+          ? (
+            <>
+              <Link className="navbar-item" to={"/user-profile-edit"}>
+                <h4>{user.firstName}</h4>
+              </Link>
+              
+              <Link className="navbar-item" to={"/"} id="home-btn">
+                <h4>Home</h4>
+              </Link>
 
-            <button onClick={logout}>Logout</button>
-          </>
-        ) 
-        
-        : (
-          <>
-            <Link to="/login">
-              {" "}
-              <button className="navbar-button">Login</button>{" "}
-            </Link>
-            <br />
-            
-            <Link to={"/"} id="home-btn">
-              <h4>Home</h4>
-            </Link>
-            
-            <Link to="/signup">
-              {" "}
-              <button className="navbar-button">Sign Up</button>{" "}
-            </Link>
-          </>
-        )}
-      </nav>
+              <button className="navbar-button" onClick={logout}>Logout</button>
+            </>
+          ) 
+          
+          : (
+            <>
+              <Link className="navbar-item" to="/login">
+                {" "}
+                <button className="navbar-button">Login</button>{" "}
+              </Link>
+              <br />
+              
+              <Link className="navbar-item" to={"/"} id="home-btn">
+                <h4>Home</h4>
+              </Link>
+              
+              <Link to="/signup">
+                {" "}
+                <button className="navbar-button">Sign Up</button>{" "}
+              </Link>
+            </>
+          )}
+        </nav>
+
+        </div>
     );
   }
 }
