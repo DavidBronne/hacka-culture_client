@@ -38,70 +38,77 @@ class Signup extends Component {
   render() {
     const { firstName, lastName, email, password, location, skills, preferedProject } = this.state;
     return (
-      <div>
+      <div className="field">
         <h1>Sign Up</h1>
 
         <form onSubmit={this.handleFormSubmit}>
 
-          <label>Last Name:</label>
-          <input
+          <label className="label">Last Name:</label>
+          <input className="input"
             type="text"
             name="lastName"
             value={lastName}
             onChange={this.handleChange}
           />
 
-          <label>First Name:</label>
-          <input
+          <label className="label">First Name:</label>
+          <input className="input"
             type="text"
             name="firstName"
             value={firstName}
             onChange={this.handleChange}
           />
 
-          <label>Email:</label>
-          <input
+          <label className="label">Email:</label>
+          <input className="input"
             type="text"
             name="email"
             value={email}
             onChange={this.handleChange}
           />
 
-          <label>Password:</label>
-          <input
+          <label className="label">Password:</label>
+          <input className="input"
             type="password"
             name="password"
             value={password}
             onChange={this.handleChange}
           />
 
-          <label>Location:</label>
-          <input
+          <label className="label">Location:</label>
+          <input className="input"
             type="text"
             name="location"
             value={location}
             onChange={this.handleChange}
           />
 
-          <label>Skills:</label>
-          <select name="skills" value={skills} onChange={this.handleChange} multiple>
-              <option value="data">data</option>
-              <option value="WebDev">WebDev</option>
-              <option value="UXUI">UXUI</option>
-          </select>
+          <label className="label">Skills:</label>
+          <div className="select is-multiple">
+            <select name="skills" value={skills} onChange={this.handleChange} multiple>
+                <option value="data">data</option>
+                <option value="WebDev">WebDev</option>
+                <option value="UXUI">UXUI</option>
+            </select>
+          </div>
 
-          <label>Prefered Project Category:</label>
-          <select name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
-              <option value="NGO">NGO</option>
-              <option value="Hackathon">Hackathon</option>
-              <option value="Business">Business</option>
-          </select>
-          
-          <input type="submit" value="Signup" />
+          <label className="label">Prefered Project Category:</label>
+          <div className="select is-multiple">
+            <select name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
+                <option value="NGO">NGO</option>
+                <option value="Hackathon">Hackathon</option>
+                <option value="Business">Business</option>
+            </select>
+          </div>
+
+          <div className="field">
+           <input className="button is-info is-outlined" type="submit" value="Signup" />
+          </div>
+
         </form>
 
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
+        <p>Already have account? <Link to={"/login"}> Login</Link></p>
+        
       </div>
     );
   }

@@ -73,10 +73,7 @@ class SeeUserDetail extends Component {
                 <p>{this.state.skills}</p>
                 <h5>prefered Project</h5>
                 <p>{this.state.preferedProject}</p>
-                <h5>initiator On Projects</h5>
-                {/* <p>{
-                    this.state.initiatorOnProject.map( (project) => { return project.projectName})
-                    }</p> */}
+
 
                 <h3>Initiator on Projects</h3>
                     {
