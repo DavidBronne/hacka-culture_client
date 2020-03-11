@@ -6,7 +6,8 @@ class UserPortal extends Component {
   
   render() {
     return (
-      <div>
+      <div className="container is-fluid">
+        <div className="notification has-text-centered">
         <h1>User Portal</h1>
         
         <Link to={"/initiator-dashboard"} >
@@ -22,7 +23,7 @@ class UserPortal extends Component {
         </Link>
 
         
-        <h1>Welcome {this.props.user.email}</h1>
+        </div> 
       </div>
     );
   }
