@@ -4,6 +4,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "./lib/Auth";
 import App from "./App";
 
+import 'bulma/css/bulma.css'
+
 ReactDOM.render(
   <Router>
     <AuthProvider>
