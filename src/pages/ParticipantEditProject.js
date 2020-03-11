@@ -46,8 +46,8 @@ componentDidMount() {
                 acceptedParticipants
             } = project;
             
-            this.setState( 
-                { projectName,
+            this.setState({ 
+                projectName,
                 description,
                 initiator,
                 githubUrl,
@@ -60,9 +60,9 @@ componentDidMount() {
                 appliedParticipants,
                 acceptedParticipants,
                 isLoading:false
-            } )
+            })
 
-            console.log('this.state', this.state)
+            console.log('this.state in EDIT PROJECT', this.state)
         })
         .catch((err) => {
             console.log(err)})
@@ -87,6 +87,7 @@ handleFormSubmit = event => {
         return (
             <div>
                 <h1>Participant Edit Project</h1>
+                
                 <h3>Project Details</h3>
 
                 <h5>Project Name</h5>
@@ -105,12 +106,12 @@ handleFormSubmit = event => {
                 <p>{this.state.requiredUxuiSkill}</p>
                 <h5>githubUrl</h5>
                 <p>{this.state.githubUrl}</p>
+                <h5>appliedParticipants</h5>
+                {/* <p>{this.state.appliedParticipants}</p> */}
 
                 <form onSubmit={this.handleFormSubmit}>
                     <button type="submit">Apply</button>
                 </form>
-
-                // button: Apply
                 
                 <Link to="/participant-seek-project">
                     <h4>Seek Project</h4>
