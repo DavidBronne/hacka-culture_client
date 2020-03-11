@@ -14,7 +14,9 @@ class AcceptedParticipantsCard extends Component{
             <div>
                 <Link to={`/see-user-detail/${this.props._id}`}>
                     <h4>{ this.props.firstName }</h4>
-                    <h4>{ this.props.skills }</h4>
+                    <h4>skills: { this.props.skills }</h4>
+                    <h4>prefered projects: { this.props.preferedProject }</h4>
+                    <h4>Location: { this.props.location }</h4>
                 </Link>
                 
 

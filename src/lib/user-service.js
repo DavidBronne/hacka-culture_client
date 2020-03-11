@@ -19,6 +19,11 @@ class User {
         .get(`/user/${id}`)
         .then(({data}) => data)
     }
+    getAll() {
+        return this.user
+        .get("/user/all")
+        .then(({data}) => data)
+    }
 }
 
 const userService = new User();
