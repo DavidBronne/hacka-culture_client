@@ -113,94 +113,114 @@ class InitiatorEditProject extends Component {
     render () {
         return (
     
-            <div>
-                <h1>Initiator Edit Project</h1>
-            
-                <form onSubmit={this.handleFormSubmit}>
-                    <div>
-                        <label>Project Name</label>
-                        <input
-                        type="text"
-                        name="projectName"
-                        value={this.state.projectName}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <input
-                        type="text"
-                        name="description"
-                        value={this.state.description}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>GithubUrl</label>
-                        <input
-                        type="text"
-                        name="githubUrl"
-                        value={this.state.githubUrl}
-                        readOnly
-                        />
-                    </div>
-                    <div>
-                        <label>Status</label>
-                        <select name="status" value={this.state.status} onChange={this.handleChange} >
-                            <option value="planning">planning</option>
-                            <option value="execution">execution</option>
-                            <option value="closed">closed</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Location</label>
-                        <input
-                        type="text"
-                        name="location"
-                        value={this.state.location}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Project Category</label>
-                        <select name="projectCategory" value={this.state.projectCategory} onChange={this.handleChange} >
-                            <option value="NGO">NGO</option>
-                            <option value="Hackathon">Hackathon</option>
-                            <option value="Business">Business</option>
-                        </select>
-                    </div>
-                    <div>
-                    <label>Required Data Skill</label>
-                        <input
-                        type="text"
-                        name="requiredDataSkill"
-                        value={this.state.requiredDataSkill}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                    <label>Required Webdev Skill</label>
-                        <input
-                        type="text"
-                        name="requiredWebdevSkill"
-                        value={this.state.requiredWebdevSkill}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Required Uxui Skill</label>
-                        <input
-                        type="text"
-                        name="requiredUxuiSkill"
-                        value={this.state.requiredUxuiSkill}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    
-                    <input type="submit" value="Save" />
-                </form>
+            <div className="level">
+                <h1 className="title level-item">Initiator Edit Project</h1>
+                <div className="field">
+                    <form onSubmit={this.handleFormSubmit}>
+                        <div>
+                            <label className="label">Project Name</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="projectName"
+                                    value={this.state.projectName}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">Status</label>
+                            <div className="select">
+                                <select name="status" value={this.state.status} onChange={this.handleChange} >
+                                    <option value="planning">planning</option>
+                                    <option value="execution">execution</option>
+                                    <option value="closed">closed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">Project Category</label>
+                            <div className="select">
+                                <select name="projectCategory" value={this.state.projectCategory} onChange={this.handleChange} >
+                                    <option value="NGO">NGO</option>
+                                    <option value="Hackathon">Hackathon</option>
+                                    <option value="Business">Business</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">Required Data Skill</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="requiredDataSkill"
+                                    value={this.state.requiredDataSkill}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">Required Webdev Skill</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="requiredWebdevSkill"
+                                    value={this.state.requiredWebdevSkill}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div >
+                            <label className="label">Required Uxui Skill</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="requiredUxuiSkill"
+                                    value={this.state.requiredUxuiSkill}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">Location</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="location"
+                                    value={this.state.location}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">Description</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="description"
+                                    value={this.state.description}
+                                    onChange={this.handleChange}
+                                />
+                            </div>   
+                        </div>
+                        <div>
+                            <label className="label">GithubUrl</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="githubUrl"
+                                    value={this.state.githubUrl}
+                                    readOnly
+                                />
+                            </div>    
+                        </div>
 
-                <h3>Applicant</h3>
+                        <input type="submit" value="Save" />
+
+                    </form>
+                </div>
+                
+                <h3 className="subtitle  is-4">Applicant</h3>
                     {
                         this.state.isLoading
                     ? null
@@ -210,7 +230,7 @@ class InitiatorEditProject extends Component {
                     })
                     }
                     
-                <h3>Accepted</h3>
+                <h3 className="subtitle is-4">Accepted</h3>
                     {
                         this.state.isLoading
                     ? null
@@ -219,8 +239,6 @@ class InitiatorEditProject extends Component {
                         return <AcceptedParticipantsCard key={user._id} {...user}/>
                     })
                     }
-                    
-                    // Delete Project button -> onCLick: related backEnd routes
 
             </div>
         )
