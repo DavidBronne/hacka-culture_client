@@ -82,42 +82,53 @@ class SeekUsers extends Component {
     
     render () {
         return (
-            <div>
-                <h1>Seek Users</h1>
+            <div className="level">
+                <h1 className="title level-item">Seek for Skills</h1>
+                <div className="field">
+                    <form onSubmit={this.handleFormSubmit}>
 
-                <form onSubmit={this.handleFormSubmit}>
+                        <div>
+                            <label className="label">Location</label>
+                            <div className="control">
+                            <input className="input"
+                            type="text"
+                            name="location"
+                            value={this.state.location}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                        </div>
+                        <div>
+                            <label className="label">Skills</label>
+                            <div className="control">
+                            <div className="select">
+                            <select name="skills" value={this.state.skills} onChange={this.handleChange} multiple>
+                                <option value="data">data</option>
+                                <option value="WebDev">WebDev</option>
+                                <option value="UXUI">UXUI</option>
+                            </select>
+                            </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">Prefered Project Category</label>
+                            <div className="control">
+                            <div className="select">
+                            <select name="preferedProject" value={this.state.preferedProject} onChange={this.handleChange} multiple>
+                                <option value="NGO">NGO</option>
+                                <option value="Hackathon">Hackathon</option>
+                                <option value="Business">Business</option>
+                            </select>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="control">
+                            <input className="button is-link" type="submit" value="Filter" />
+                        </div>
+                    </form>
+                </div>
 
-                    <div>
-                        <label>Location</label>
-                        <input
-                        type="text"
-                        name="location"
-                        value={this.state.location}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Skills</label>
-                        <select name="skills" value={this.state.skills} onChange={this.handleChange} multiple>
-                        <option value="data">data</option>
-                        <option value="WebDev">WebDev</option>
-                        <option value="UXUI">UXUI</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Prefered Project Category</label>
-                        <select name="preferedProject" value={this.state.preferedProject} onChange={this.handleChange} multiple>
-                        <option value="NGO">NGO</option>
-                        <option value="Hackathon">Hackathon</option>
-                        <option value="Business">Business</option>
-                        </select>
-                    </div>
-                    <div>
-                        <input type="submit" value="Filter" />
-                    </div>
-                </form>
-
-                <h3>Result</h3>
+                <h3 className="subtitle">Result</h3>
                 { 
                     
                     this.state.isLoading 
