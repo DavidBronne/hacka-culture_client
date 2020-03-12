@@ -41,6 +41,9 @@ class AppliedParticipantsCard extends Component{
                                             <p className="subtitle is-6">{ this.props.skills }</p>
                                         </div>
                                     </div>
+                                </div>
+                        </div>
+                    </Link>
                                     <div className="content field is-grouped">
                                         <div className="control">
                                             <form onSubmit={this.acceptSubmit}>
@@ -52,9 +55,6 @@ class AppliedParticipantsCard extends Component{
                                             </form>
                                         </div>
                                     </div>
-                                </div>
-                        </div>
-                    </Link>
             </div>
         )
     }
