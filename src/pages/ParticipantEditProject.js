@@ -85,10 +85,10 @@ handleFormSubmit = event => {
     
     render () {
         return (
-            <div>
-                <h1>Participant Edit Project</h1>
+            <div className="level">
+                <h1 className="title level-item">Participant Edit Project</h1>
                 
-                <h3>Project Details</h3>
+                <h3 className="subtitle">Project Details</h3>
 
                 <h5>Project Name</h5>
                 <p>{this.state.projectName}</p>
@@ -110,7 +110,7 @@ handleFormSubmit = event => {
                 <p>{this.state.requiredUxuiSkill}</p>
                 <h5>githubUrl</h5>
                 <p>{this.state.githubUrl}</p>
-                <h5>appliedParticipants</h5>
+                <h5 className="subtitle">appliedParticipants</h5>
                 {
                     this.state.isLoading
                     ? null
@@ -121,15 +121,20 @@ handleFormSubmit = event => {
                         </Link>})
                 }
 
-                <form onSubmit={this.handleFormSubmit}>
-                    <button type="submit">Apply</button>
-                </form>
-                
-                <Link to="/participant-seek-project">
-                    <h4>Seek Project</h4>
-                </Link>
+                <div className="field is-grouped">
+                    <div className="control">
+                        <form onSubmit={this.handleFormSubmit}>
+                            <button  className="button is-link" type="submit">Apply</button>
+                        </form>
+                    </div>
+                    <div className="control">
+                        <Link  className="button is-link is-light" to="/participant-seek-project">
+                            <h4>Seek Project</h4>
+                        </Link>
+                    </div>
+                </div>
 
-                <h3>Accepted participants</h3>
+                <h3 className="subtitle">Accepted participants</h3>
                     {
                         this.state.isLoading
                     ? null
