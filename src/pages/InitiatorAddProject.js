@@ -81,97 +81,126 @@ class InitiatorAddProject extends Component {
         
 
         return (
-            <div>
+            <div className="level">
                 
-                <h1>Initiate a Project</h1>
+                 
+                <h1 className="title level-item">Initiate a Project</h1>
                 <div className="field">
                     <form onSubmit={this.handleFormSubmit}>
                         <div>
                             <label className="label">Project Name</label>
-                            <input
-                            type="text"
-                            name="projectName"
-                            value={projectName}
-                            onChange={this.handleChange}
-                            />
-                        </div>
-                        <div>
-                            <label className="label">Description</label>
-                            <input
-                            type="text"
-                            name="description"
-                            value={description}
-                            onChange={this.handleChange}
-                            />
-                        </div>
-                        <div>
-                            <label className="label">GithubUrl</label>
-                            <input
-                            type="text"
-                            name="githubUrl"
-                            value={githubUrl}
-                            onChange={this.handleChange}
-                            />
+                            <div className="control">
+                                <input className="input"
+                                type="text"
+                                name="projectName"
+                                value={projectName}
+                                onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
                         <div>
                             <label className="label">Status</label>
-                            <select name="status" value={status} onChange={this.handleChange} >
-                                <option value="planning">planning</option>
-                                <option value="execution">execution</option>
-                                <option value="closed">closed</option>
-                            </select>
+                            <div className="control">
+                                <div className="select">
+                                    <select className="status" value={status} onChange={this.handleChange} >
+                                        <option value="planning">planning</option>
+                                        <option value="execution">execution</option>
+                                        <option value="closed">closed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label className="label">Project Category</label>
+                            <div className="control">
+                                <div className="select">
+                                    <select name="projectCategory" value={projectCategory} onChange={this.handleChange} >
+                                        <option value="NGO">NGO</option>
+                                        <option value="Hackathon">Hackathon</option>
+                                        <option value="Business">Business</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">#Data</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="number"
+                                    name="requiredDataSkill"
+                                    value={requiredDataSkill}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">#Webdev</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="number"
+                                    name="requiredWebdevSkill"
+                                    value={requiredWebdevSkill}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label className="label">#Uxui</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="number"
+                                    name="requiredUxuiSkill"
+                                    value={requiredUxuiSkill}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
                         <div>
                             <label className="label">Location</label>
-                            <input
-                            type="text"
-                            name="location"
-                            value={location}
-                            onChange={this.handleChange}
-                            />
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="location"
+                                    value={location}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
                         <div>
-                            <label className="label">Project Category</label>
-                            <select name="projectCategory" value={projectCategory} onChange={this.handleChange} >
-                                <option value="NGO">NGO</option>
-                                <option value="Hackathon">Hackathon</option>
-                                <option value="Business">Business</option>
-                            </select>
+                            <label className="label">Description</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="description"
+                                    value={description}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
                         <div>
-                        <label className="label">Required Data Skill</label>
-                            <input
-                            type="number"
-                            name="requiredDataSkill"
-                            value={requiredDataSkill}
-                            onChange={this.handleChange}
-                            />
+                            <label className="label">GithubUrl</label>
+                            <div className="control">
+                                <input className="input"
+                                    type="text"
+                                    name="githubUrl"
+                                    value={githubUrl}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
-                        <div>
-                        <label className="label">Required Webdev Skill</label>
-                            <input
-                            type="number"
-                            name="requiredWebdevSkill"
-                            value={requiredWebdevSkill}
-                            onChange={this.handleChange}
-                            />
+                        <div className="field is-grouped">
+                            <div className="control">
+                                <input className="button is-link" type="submit" value="Initiate" />
+                            </div>
+
+                            <div className="control">
+                                <Link className="button is-link is-light" to={"/initiator-dashboard"}>Cancel</Link>
+                            </div>
                         </div>
-                        <div>
-                            <label className="label">Required Uxui Skill</label>
-                            <input
-                            type="number"
-                            name="requiredUxuiSkill"
-                            value={requiredUxuiSkill}
-                            onChange={this.handleChange}
-                            />
-                        </div>
-                        
-                        <input type="submit" value="Initiate" />
+                    
                     </form>
                 </div>
-
-                <Link to={"/initiator-dashboard"}>Dashboard</Link>
-            
             
             
             </div>

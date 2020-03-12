@@ -41,10 +41,10 @@ class InitiatorDashboard extends Component {
 
     render() {
         return (
-            <div>
-                <h1 className="title" >Initiator Dashboard</h1>
+            <div className="level">
+                <h1 className="title level-item" >Initiator Dashboard</h1>
 
-                <Link to="/initiator-add-project">
+                <Link className="level-item" to="/initiator-add-project">
                     <h4>Initiate a Project</h4>
                 </Link>
 

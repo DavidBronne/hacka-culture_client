@@ -31,11 +31,11 @@ class InitiatorDashboardCard extends Component{
                                     </figure>
                                  </div>
                                 <div className="media-content">
-                                    <p className="title is-4">{ this.props.projectName }</p>
+                                    <p className="title is-5">{ this.props.projectName }</p>
                                     <p className="subtitle is-6">{ this.props.projectCategory }</p>
                                 </div>
                             </div>
-                            <div className="content">
+                            <div className="content field is-grouped">
                                 <p>Data: { this.props.requiredDataSkill }</p>
                                 <p>WebDev: { this.props.requiredWebdevSkill }</p>
                                 <p>UxUi: { this.props.requiredUxuiSkill }</p>
