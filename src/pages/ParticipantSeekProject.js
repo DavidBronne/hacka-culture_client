@@ -107,51 +107,26 @@ class ParticipantSeekProject extends Component {
         
 
         return (
-            <div>
-                <h1>Participant Seek Project</h1>
-                <Link to="/participant-dashboard">
-                    <h4>Dashboard</h4>
-                    </Link>
+            <div  className="level">
+                <h1 className="title level-item">Participant Seek Project</h1>
+                <div className="field">
                 
-                {/* <form onSubmit={this.handleFormSubmit}> */}
-                    {/* <div>
-                        <label>Project Name</label>
-                        <input
-                        type="text"
-                        name="projectName"
-                        value={projectName}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <input
-                        type="text"
-                        name="description"
-                        value={description}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>GithubUrl</label>
-                        <input
-                        type="text"
-                        name="githubUrl"
-                        value={githubUrl}
-                        onChange={this.handleChange}
-                        />
-                    </div> */}
+               
                     <form onSubmit={this.handleFormSubmit}>
                     <div>
-                        <label>Status</label>
-                        <select name="status" value={status} onChange={this.handleChange} multiple>
-                            <option value="planning">planning</option>
-                            <option value="execution">execution</option>
-                            <option value="closed">closed</option>
-                        </select>
+                        <label className="label">Status</label>
+                        <div className="control">
+                        <div className="select">
+                            <select name="status" value={status} onChange={this.handleChange} multiple>
+                                <option value="planning">planning</option>
+                                <option value="execution">execution</option>
+                                <option value="closed">closed</option>
+                            </select>
+                            </div>
+                        </div>
                     </div>
                     {/* <div>
-                        <label>Location</label>
+                        <label className="label">Location</label>
                         <input
                         type="text"
                         name="location"
@@ -160,42 +135,63 @@ class ParticipantSeekProject extends Component {
                         />
                     </div> */}
                     <div>
-                        <label>Project Category</label>
+                        <label className="label">Project Category</label>
+                        <div className="control">
+                        <div className="select">
                         <select name="projectCategory" value={projectCategory} onChange={this.handleChange} multiple>
                             <option value="NGO">NGO</option>
                             <option value="Hackathon">Hackathon</option>
                             <option value="Business">Business</option>
                         </select>
+                        </div>
+                        </div>
                     </div>
                     <div>
-                    <label>Required Data Skill</label>
-                        <input
+                    <label className="label">Required Data Skill</label>
+                    <div className="control">
+                        <input className="input"
                         type="number"
                         name="requiredDataSkill"
                         value={requiredDataSkill}
                         onChange={this.handleChange}
                         />
                     </div>
-                    <div>
-                    <label>Required Webdev Skill</label>
-                        <input
-                        type="number"
-                        name="requiredWebdevSkill"
-                        value={requiredWebdevSkill}
-                        onChange={this.handleChange}
-                        />
                     </div>
                     <div>
-                        <label>Required Uxui Skill</label>
-                        <input
-                        type="number"
-                        name="requiredUxuiSkill"
-                        value={requiredUxuiSkill}
-                        onChange={this.handleChange}
-                        />
+                        <label className="label">Required Webdev Skill</label>
+                        <div className="control">
+                            <input className="input"
+                            type="number"
+                            name="requiredWebdevSkill"
+                            value={requiredWebdevSkill}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label className="label">Required Uxui Skill</label>
+                            <div className="control">
+                            <input className="input"
+                            type="number"
+                            name="requiredUxuiSkill"
+                            value={requiredUxuiSkill}
+                            onChange={this.handleChange}
+                            />
+                        </div>
                     </div>
                     
-                    <input type="submit" value="Filter" />
+                    <div className="field is-grouped">
+                        <div className="control">
+                            <input className="button is-link" type="submit" value="Filter" />
+                        </div>
+                    
+                        <div className="control">
+                        <Link className="button is-link is-light" to="/participant-dashboard">
+                            <h4>Cancel</h4>
+                        </Link>
+                        </div>
+                    </div>
+                
                 </form>
             
                 <h3>Result</h3>
@@ -216,7 +212,7 @@ class ParticipantSeekProject extends Component {
                     
                     
                 }
-
+            </div>
             </div>
         )
     }    
