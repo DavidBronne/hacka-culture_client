@@ -15,11 +15,14 @@ class Navbar extends Component {
           ? (
             <>
               <Link className="navbar-item" to={"/user-profile-edit"}>
-                <h4>{user.firstName}</h4>
+                <h4 className="navbar-button">{user.firstName}</h4>
               </Link>
               
               <Link className="navbar-item" to={"/"} id="home-btn">
-                <h4>Home</h4>
+                <h4>
+                
+                <img src="https://pngriver.com/wp-content/uploads/2018/04/Download-Peace-Symbol-PNG-Image.png" alt="Home"></img>
+                </h4>
               </Link>
 
               <button className="navbar-button" onClick={logout}>Logout</button>
@@ -30,17 +33,17 @@ class Navbar extends Component {
             <>
               <Link className="navbar-item" to="/login">
                 {" "}
-                <button className="navbar-button">Login</button>{" "}
+                <button className="button is-rounded">Login</button>{" "}
               </Link>
               <br />
               
               <Link className="navbar-item" to={"/"} id="home-btn">
-                <h4>Home</h4>
+              <img src="https://pngriver.com/wp-content/uploads/2018/04/Download-Peace-Symbol-PNG-Image.png" alt="Home"></img>
               </Link>
               
               <Link to="/signup">
                 {" "}
-                <button className="navbar-button">Sign Up</button>{" "}
+                <button className="button is-rounded">Sign Up</button>{" "}
               </Link>
             </>
           )}

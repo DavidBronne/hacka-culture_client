@@ -8,7 +8,7 @@ class UserPortal extends Component {
     return (
       <div className="container is-fluid">
         <div className="notification has-text-centered">
-        <h1 className="title" >User Portal</h1>
+        <h1 className="title" >Portal</h1>
         
         <div className="content field">
           <div className="control">

@@ -91,70 +91,90 @@ class UserProfileEdit extends Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="level">
         
-        <h1>Edit User Profile</h1>
+        <h1 className="title level-item">Edit User Profile</h1>
+        <div className="field">
+         
+          <form onSubmit={this.handleFormSubmit}>
+           
+            <div>
+              <label className="label">Last Name</label>
+              <div className="control">
+              <input className="input"
+                type="text"
+                name="lastName"
+                value={lastName}
+                onChange={this.handleChange}
+              />
+            </div>
+            </div>
+            <div>
+              <label className="label">First Name</label>
+              <div className="control">
+              <input className="input"
+                type="text"
+                name="firstName"
+                value={firstName}
+                onChange={this.handleChange}
+              />
+            </div>
+            </div>
+            <div>
+              <label className="label">Email</label>
+              <div className="control">
+              <input className="input"
+                type="text"
+                name="email"
+                value={email}
+                // onChange={this.handleChange}
+              />
+            </div>
+            </div>
+            <div>
+              <label className="label">Location</label>
+              <div className="control">
+              <input className="input"
+                type="text"
+                name="location"
+                value={location}
+                onChange={this.handleChange}
+              />
+            </div>
+            </div>
+            <div>
+              <label className="label">Skills</label>
+              <div className="control">
+              <div className="select">
+                <select name="skills" value={skills} onChange={this.handleChange} multiple>
+                  <option value="data">data</option>
+                  <option value="WebDev">WebDev</option>
+                  <option value="UXUI">UXUI</option>
+                </select>
+                </div>
+                </div>
+            </div>
+            <div>
+              <label className="label">Prefered Project Category</label>
+              <div className="control">
+              <div className="select">
+                <select name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
+                  <option value="NGO">NGO</option>
+                  <option value="Hackathon">Hackathon</option>
+                  <option value="Business">Business</option>
+                </select>
+                </div>
+              </div>
 
-        <form onSubmit={this.handleFormSubmit}>
-          <div>
-            <label>Last Name</label>
-            <input
-              type="text"
-              name="lastName"
-              value={lastName}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <label>First Name</label>
-            <input
-              type="text"
-              name="firstName"
-              value={firstName}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <label>Email</label>
-            <input
-              type="text"
-              name="email"
-              value={email}
-              // onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <label>Location</label>
-            <input
-              type="text"
-              name="location"
-              value={location}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <label>Skills</label>
-            <select name="skills" value={skills} onChange={this.handleChange} multiple>
-              <option value="data">data</option>
-              <option value="WebDev">WebDev</option>
-              <option value="UXUI">UXUI</option>
-            </select>
-          </div>
-          <div>
-            <label>Prefered Project Category</label>
-            <select name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
-              <option value="NGO">NGO</option>
-              <option value="Hackathon">Hackathon</option>
-              <option value="Business">Business</option>
-            </select>
-
-
+            
+            </div>
+            
+            <div className="control">
+              <input className="button is-link" type="submit" value="Mutate" />
+            </div>
           
-          </div>
-          <div>
-            <input type="submit" value="Mutate" />
-          </div>
-        </form>
+          </form>
+        </div>
         
       </div>
     );
