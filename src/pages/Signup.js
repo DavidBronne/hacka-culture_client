@@ -39,7 +39,7 @@ class Signup extends Component {
     const { firstName, lastName, email, password, location, skills, preferedProject } = this.state;
     return (
       <div className="field">
-        <h1>Sign Up</h1>
+        <h1 className="title" >Sign Up</h1>
 
         <form onSubmit={this.handleFormSubmit}>
 

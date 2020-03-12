@@ -18,9 +18,7 @@ class InitiatorAddProject extends Component {
         requiredWebdevSkill: "",		
         requiredUxuiSkill: ""
     }
-    
-    
-
+  
   
     
     handleFormSubmit = event => {
@@ -84,93 +82,98 @@ class InitiatorAddProject extends Component {
 
         return (
             <div>
-                <h1>Initiator Add Project</h1>
+                
+                <h1>Initiate a Project</h1>
+                <div className="field">
+                    <form onSubmit={this.handleFormSubmit}>
+                        <div>
+                            <label className="label">Project Name</label>
+                            <input
+                            type="text"
+                            name="projectName"
+                            value={projectName}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label className="label">Description</label>
+                            <input
+                            type="text"
+                            name="description"
+                            value={description}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label className="label">GithubUrl</label>
+                            <input
+                            type="text"
+                            name="githubUrl"
+                            value={githubUrl}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label className="label">Status</label>
+                            <select name="status" value={status} onChange={this.handleChange} >
+                                <option value="planning">planning</option>
+                                <option value="execution">execution</option>
+                                <option value="closed">closed</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label className="label">Location</label>
+                            <input
+                            type="text"
+                            name="location"
+                            value={location}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label className="label">Project Category</label>
+                            <select name="projectCategory" value={projectCategory} onChange={this.handleChange} >
+                                <option value="NGO">NGO</option>
+                                <option value="Hackathon">Hackathon</option>
+                                <option value="Business">Business</option>
+                            </select>
+                        </div>
+                        <div>
+                        <label className="label">Required Data Skill</label>
+                            <input
+                            type="number"
+                            name="requiredDataSkill"
+                            value={requiredDataSkill}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                        <div>
+                        <label className="label">Required Webdev Skill</label>
+                            <input
+                            type="number"
+                            name="requiredWebdevSkill"
+                            value={requiredWebdevSkill}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label className="label">Required Uxui Skill</label>
+                            <input
+                            type="number"
+                            name="requiredUxuiSkill"
+                            value={requiredUxuiSkill}
+                            onChange={this.handleChange}
+                            />
+                        </div>
+                        
+                        <input type="submit" value="Initiate" />
+                    </form>
+                </div>
 
-                <form onSubmit={this.handleFormSubmit}>
-                    <div>
-                        <label>Project Name</label>
-                        <input
-                        type="text"
-                        name="projectName"
-                        value={projectName}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <input
-                        type="text"
-                        name="description"
-                        value={description}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>GithubUrl</label>
-                        <input
-                        type="text"
-                        name="githubUrl"
-                        value={githubUrl}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Status</label>
-                        <select name="status" value={status} onChange={this.handleChange} >
-                            <option value="planning">planning</option>
-                            <option value="execution">execution</option>
-                            <option value="closed">closed</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Location</label>
-                        <input
-                        type="text"
-                        name="location"
-                        value={location}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Project Category</label>
-                        <select name="projectCategory" value={projectCategory} onChange={this.handleChange} >
-                            <option value="NGO">NGO</option>
-                            <option value="Hackathon">Hackathon</option>
-                            <option value="Business">Business</option>
-                        </select>
-                    </div>
-                    <div>
-                    <label>Required Data Skill</label>
-                        <input
-                        type="number"
-                        name="requiredDataSkill"
-                        value={requiredDataSkill}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                    <label>Required Webdev Skill</label>
-                        <input
-                        type="number"
-                        name="requiredWebdevSkill"
-                        value={requiredWebdevSkill}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label>Required Uxui Skill</label>
-                        <input
-                        type="number"
-                        name="requiredUxuiSkill"
-                        value={requiredUxuiSkill}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    
-                    <input type="submit" value="Kick off" />
-                </form>
+                <Link to={"/initiator-dashboard"}>Dashboard</Link>
             
-                <Link to={"/initiator-dashboard"}> Don't Create</Link>
+            
+            
             </div>
         )
     }

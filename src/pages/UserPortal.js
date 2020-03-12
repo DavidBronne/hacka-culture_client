@@ -8,7 +8,7 @@ class UserPortal extends Component {
     return (
       <div className="container is-fluid">
         <div className="notification has-text-centered">
-        <h1>User Portal</h1>
+        <h1 className="title" >User Portal</h1>
         
         <Link to={"/initiator-dashboard"} >
           <h4>Initiate</h4>
@@ -19,7 +19,7 @@ class UserPortal extends Component {
         </Link>
 
         <Link to={"/seek-users"}>
-          <h4>Profiles</h4>
+          <h4>Skills</h4>
         </Link>
 
         

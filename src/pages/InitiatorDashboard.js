@@ -42,13 +42,13 @@ class InitiatorDashboard extends Component {
     render() {
         return (
             <div>
-                <h1>Initiator Dashboard</h1>
+                <h1 className="title" >Initiator Dashboard</h1>
 
                 <Link to="/initiator-add-project">
-                    <h4>Kick a Project off</h4>
+                    <h4>Initiate a Project</h4>
                 </Link>
 
-                <h3>My Projects as Initiator</h3>
+                <h2 className="subtitle" >My Projects as Initiator</h2>
  
                 { 
                     this.state.isLoading 
