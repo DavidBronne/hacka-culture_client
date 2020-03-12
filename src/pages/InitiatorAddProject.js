@@ -102,7 +102,7 @@ class InitiatorAddProject extends Component {
                             <label className="label">Status</label>
                             <div className="control">
                                 <div className="select">
-                                    <select Name="status" value={status} onChange={this.handleChange} >
+                                    <select className="status" value={status} onChange={this.handleChange} >
                                         <option value="planning">planning</option>
                                         <option value="execution">execution</option>
                                         <option value="closed">closed</option>

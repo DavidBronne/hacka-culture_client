@@ -10,18 +10,21 @@ class UserPortal extends Component {
         <div className="notification has-text-centered">
         <h1 className="title" >User Portal</h1>
         
-        <Link to={"/initiator-dashboard"} >
-          <h4>Initiate</h4>
-        </Link>
+        <div className="content field">
+          <div className="control">
+            <Link className="button is-link" to={"/initiator-dashboard"} >
+              <h4>Initiate</h4>
+            </Link>
 
-        <Link to={"/participant-dashboard"}>
-          <h4>Participate</h4>
-        </Link>
+            <Link className="button is-link" to={"/participant-dashboard"}>
+              <h4>Participate</h4>
+            </Link>
 
-        <Link to={"/seek-users"}>
-          <h4>Skills</h4>
-        </Link>
-
+            <Link className="button is-link" to={"/seek-users"}>
+              <h4>Skills</h4>
+            </Link>
+          </div>
+        </div>
         
         </div> 
       </div>

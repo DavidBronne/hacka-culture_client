@@ -12,11 +12,24 @@ class AcceptedParticipantsCard extends Component{
     render() {
         return (
             <div>
+                
                 <Link to={`/see-user-detail/${this.props._id}`}>
-                    <h4>{ this.props.firstName }</h4>
-                    <h4>skills: { this.props.skills }</h4>
-                    <h4>prefered projects: { this.props.preferedProject }</h4>
-                    <h4>Location: { this.props.location }</h4>
+                <div className="card">
+                    <div className="card-content">
+                        <div className="media">
+                            <div className="media-left">
+                                <figure className="image is-48x48">
+                                    <img src="https://secondchancetinyhomes.org/wp-content/uploads/2016/09/empty-profile.png" alt="Placeholder image"></img>
+                                </figure>
+                            </div>
+                            <div className="media-content">
+                                <p className="title is-5">{ this.props.firstName }</p>
+                                <p className="subtitle is-6">{ this.props.skills }</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 </Link>
                 
 

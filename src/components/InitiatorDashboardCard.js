@@ -14,7 +14,7 @@ class InitiatorDashboardCard extends Component{
         
             
             
-            
+        
   
 
         
@@ -27,7 +27,7 @@ class InitiatorDashboardCard extends Component{
                             <div className="media">
                                 <div className="media-left">
                                     <figure className="image is-48x48">
-                                        <img src="https://secondchancetinyhomes.org/wp-content/uploads/2016/09/empty-profile.png" alt="Placeholder image"></img>
+                                        <img src="https://lh3.googleusercontent.com/proxy/NmDDqDhBPFomKS6bsf1XhAypNivvS_trWN3uYVdQkJTHi50t50u7aNPOdrquYZ-Mbx-L3iQ6SH9f88D4OttUd9wwT_Y7Uas" alt="Placeholder image"></img>
                                     </figure>
                                  </div>
                                 <div className="media-content">
