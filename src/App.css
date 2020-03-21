@@ -1,16 +1,18 @@
-:root {
+/* Color ideas */
+/* :root {
   --sand: #D3C6BF;
   --dark-blue: #557D8A;
   --dark: #32332F;
   --light-blue: #8BB7D1;
 
-}
+} */
 
 html, body {
   margin: 0;
   padding: 0;
 }
 
+/* Navbar */
 .navbar-menu.is-active {
   display: flex !important;
   justify-content: space-around;
@@ -21,11 +23,27 @@ html, body {
   align-self: center;
 }
 
+/* Home page */
 .home {
-  
-  height: 100vh;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.home-paragraph {
+  padding: 1em
+}
+
+/* Sign up page */
+.signup-select {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+.signup-select-item {
+  display: flex;
+  flex-direction: column;
 }
