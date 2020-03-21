@@ -20,8 +20,8 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className="field">
-        <h1>Login</h1>
+      <div className="box field level">
+        <h1 className="title is-2 level-item">Login</h1>
 
         <form onSubmit={this.handleFormSubmit}>
           <label className="label">Email:</label>
@@ -39,8 +39,10 @@ class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
+          <div className="level-item button-padding">
+            <input className="button is-info is-outlined" type="submit" value="Login" />
+          </div>
 
-          <input className="button is-info is-outlined" type="submit" value="Login" />
         </form>
       </div>
     );
