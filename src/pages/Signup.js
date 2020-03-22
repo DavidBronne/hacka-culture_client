@@ -38,7 +38,7 @@ class Signup extends Component {
   render() {
     const { firstName, lastName, email, password, location, skills, preferedProject } = this.state;
     return (
-      <div className="box">
+      <div className="box notification">
 
         <div className="field level">
           <h1 className="title is-2 level-item">Sign Up</h1>

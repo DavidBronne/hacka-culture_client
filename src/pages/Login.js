@@ -20,7 +20,7 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className="box field level">
+      <div className="box notification field level">
         <h1 className="title is-2 level-item">Login</h1>
 
         <form onSubmit={this.handleFormSubmit}>

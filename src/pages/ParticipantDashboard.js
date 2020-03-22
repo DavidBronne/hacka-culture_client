@@ -34,17 +34,18 @@ class ParticipantDashboard extends Component {
         return (
         
         <div className="container is-fluid">
-            <div className="notification has-text-centered">
-                <h1 className="title" >Participant Dashboard</h1>
+            <div className="notification level">
+                <h1 className="title is-2 level-item" >Participant Dashboard</h1>
 
-                <div className="content field">
+                <div className=" field level-item">
                     <div className="control">
-                        <Link className="button is-link" to="/participant-seek-project">
+                        <Link className="button is-info is-outlined" to="/participant-seek-project">
                             <h4>Seek for Project</h4>
                         </Link>
                     </div>
                 </div>
-                <h3 className="subtitle" >My applied Projects</h3>
+                
+                <h3 className="subtitle is-3" >My applied Projects:</h3>
                     {
                         this.state.appliedOnProject.map( (project) => {
                             
@@ -52,7 +53,8 @@ class ParticipantDashboard extends Component {
                         })
                     }
 
-                <h3 className="subtitle" >My accepted Projects</h3>
+                <h3 className="subtitle is-3" >My accepted Projects:</h3>
+
                     {
                         this.state.acceptedOnProject.map( (project) => {
                             

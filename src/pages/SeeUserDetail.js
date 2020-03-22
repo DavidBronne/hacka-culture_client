@@ -58,7 +58,7 @@ class SeeUserDetail extends Component {
     
     render () {
         return (
-            <div className=" box level">
+            <div className=" box notification level">
                 <h1 className="title is-2 level-item">See User Detail</h1>
                 <div className="box">
                     <div className="detail">

@@ -82,7 +82,7 @@ class SeekUsers extends Component {
     
     render () {
         return (
-            <div className="box level">
+            <div className="box notification level">
                 <div className="field">
                     <h1 className="title is-2 level-item">Seek for Skills</h1>
                         <form onSubmit={this.handleFormSubmit}>
