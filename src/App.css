@@ -24,7 +24,7 @@ html, body {
 }
 
 /* Home page */
-.home {
+.home-portal {
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -32,8 +32,12 @@ html, body {
   align-items: center;
 }
 
-.home-paragraph {
-  padding: 1em
+.home-portal-paragraph {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Sign up page */
