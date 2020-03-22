@@ -107,112 +107,117 @@ class ParticipantSeekProject extends Component {
         
 
         return (
-            <div  className="level">
-                <h1 className="title level-item">Participant Seek Project</h1>
-                <div className="field">
+            <div className="container is-fluid">
+                <div className="level notification">
+                    <h1 className="title is-2 level-item">Project Search</h1>
+                    <div className="field">
+                    
                 
-               
-                    <form onSubmit={this.handleFormSubmit}>
-                    <div>
-                        <label className="label">Status</label>
-                        <div className="control">
-                        <div className="select">
-                            <select name="status" value={status} onChange={this.handleChange} multiple>
-                                <option value="planning">planning</option>
-                                <option value="execution">execution</option>
-                                <option value="closed">closed</option>
-                            </select>
+                        <form onSubmit={this.handleFormSubmit}>
+                        
+                        <div className="skill-project-select">
+                            <div className="skill-project-select-item">
+                                <label className="label">Status</label>
+                                <div className="control">
+                                    <div className="select is-multiple">
+                                        <select size="3" name="status" value={status} onChange={this.handleChange} multiple>
+                                            <option value="planning">planning</option>
+                                            <option value="execution">execution</option>
+                                            <option value="closed">closed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* <div>
+                                <label className="label">Location</label>
+                                <input
+                                type="text"
+                                name="location"
+                                value={location}
+                                onChange={this.handleChange}
+                                />
+                            </div> */} 
+                            <div className="skill-project-select-item">
+                                <label className="label">Project Category</label>
+                                <div className="control">
+                                    <div className="select is-multiple">
+                                        <select size="3" name="projectCategory" value={projectCategory} onChange={this.handleChange} multiple>
+                                            <option value="NGO">NGO</option>
+                                            <option value="Hackathon">Hackathon</option>
+                                            <option value="Business">Business</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    {/* <div>
-                        <label className="label">Location</label>
-                        <input
-                        type="text"
-                        name="location"
-                        value={location}
-                        onChange={this.handleChange}
-                        />
-                    </div> */}
-                    <div>
-                        <label className="label">Project Category</label>
-                        <div className="control">
-                        <div className="select">
-                        <select name="projectCategory" value={projectCategory} onChange={this.handleChange} multiple>
-                            <option value="NGO">NGO</option>
-                            <option value="Hackathon">Hackathon</option>
-                            <option value="Business">Business</option>
-                        </select>
+
+                        <div className="skill-project-select">
+                            <div className="skill-project-select-item">
+                                <label className="label">Data</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="number"
+                                        name="requiredDataSkill"
+                                        value={requiredDataSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="skill-project-select-item">
+                                <label className="label">Webdev</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="number"
+                                        name="requiredWebdevSkill"
+                                        value={requiredWebdevSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="skill-project-select-item">
+                                <label className="label">UxUi</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="number"
+                                        name="requiredUxuiSkill"
+                                        value={requiredUxuiSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
-                    <div>
-                    <label className="label">Required Data Skill</label>
-                    <div className="control">
-                        <input className="input"
-                        type="number"
-                        name="requiredDataSkill"
-                        value={requiredDataSkill}
-                        onChange={this.handleChange}
-                        />
-                    </div>
-                    </div>
-                    <div>
-                        <label className="label">Required Webdev Skill</label>
-                        <div className="control">
-                            <input className="input"
-                            type="number"
-                            name="requiredWebdevSkill"
-                            value={requiredWebdevSkill}
-                            onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <label className="label">Required Uxui Skill</label>
-                            <div className="control">
-                            <input className="input"
-                            type="number"
-                            name="requiredUxuiSkill"
-                            value={requiredUxuiSkill}
-                            onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    
-                    <div className="field is-grouped">
-                        <div className="control">
-                            <input className="button is-link" type="submit" value="Filter" />
-                        </div>
-                    
-                        <div className="control">
-                        <Link className="button is-link is-light" to="/participant-dashboard">
-                            <h4>Cancel</h4>
-                        </Link>
-                        </div>
-                    </div>
-                
-                </form>
-            
-                <h3>Result</h3>
-                {console.log('this.state.projects in render',this.state.projects)}
-                { 
-                    
-                    this.state.isLoading 
-                    ? null 
                         
-                    :   this.state.projectsFiltered
-                            .map( (project) => {
+                        <div className="field level-item">
+                            <div className="control">
+                                <input className="button is-info is-outlined" type="submit" value="Filter" />
+                            </div>
+                        
+                            <div className="control level-item">
+                            <Link className="button is-link is-light" to="/participant-dashboard">
+                                <h4>Cancel</h4>
+                            </Link>
+                            </div>
+                        </div>
+                    
+                    </form>
+                
+                    <h3>Result</h3>
+                    {console.log('this.state.projects in render',this.state.projects)}
+                    { 
+                        
+                        this.state.isLoading 
+                        ? null 
                             
-                            return <ParticipantSeekProjectCard key={ project._id } {...project}/>
-                    
-                       
-                    })
-                    
-                    
-                    
-                }
-            </div>
+                        :   this.state.projectsFiltered
+                                .map( (project) => {
+                                
+                                return <ParticipantSeekProjectCard key={ project._id } {...project}/>
+                        
+                        
+                        })    
+                    }
+                </div>
+                </div>
             </div>
         )
     }    

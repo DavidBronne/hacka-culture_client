@@ -21,7 +21,7 @@ class ParticipantSeekProjectCard extends Component{
                             <div className="media">
                                 <div className="media-left">
                                     <figure className="image is-48x48">
-                                        <img src="https://lh3.googleusercontent.com/proxy/NmDDqDhBPFomKS6bsf1XhAypNivvS_trWN3uYVdQkJTHi50t50u7aNPOdrquYZ-Mbx-L3iQ6SH9f88D4OttUd9wwT_Y7Uas" alt="Placeholder image"></img>
+                                    <img src="https://previews.123rf.com/images/nikolae/nikolae1402/nikolae140200006/26042457-ic%C3%B4ne-d-ampoule-isol%C3%A9-sur-fond-blanc.jpg" alt="Project Icon"></img>
                                     </figure>
                                  </div>
                                 <div className="media-content">
