@@ -84,11 +84,12 @@ class Signup extends Component {
               value={location}
               onChange={this.handleChange}
             />
-            <div className="signup-select">
-              <div className="signup-select-item">
+            
+            <div className="skill-project-select">
+              <div className="skill-project-select-item">
                 <label className="label">Skills:</label>
                 <div className="select is-multiple">
-                  <select name="skills" value={skills} onChange={this.handleChange} multiple>
+                  <select size="3" name="skills" value={skills} onChange={this.handleChange} multiple>
                       <option value="data">data</option>
                       <option value="WebDev">WebDev</option>
                       <option value="UXUI">UXUI</option>
@@ -96,10 +97,10 @@ class Signup extends Component {
                 </div>
               </div>
               
-              <div className="signup-select-item">
+              <div className="skill-project-select-item">
                 <label className="label">Prefered Projects:</label>
                 <div className="select is-multiple">
-                  <select name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
+                  <select  size="3" name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
                       <option value="NGO">NGO</option>
                       <option value="Hackathon">Hackathon</option>
                       <option value="Business">Business</option>

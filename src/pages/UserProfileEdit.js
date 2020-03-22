@@ -70,16 +70,15 @@ class UserProfileEdit extends Component {
           
         }
       }
-      // console.log('value multi select', value);
+      
     }
     
     this.setState({ [name]: value });
-    // console.log('this.state after mutate', this.state)
+    
   }
   
   render() {  
-    // const { user } = this.props;
-    // console.log("UUUUUUSSSSEEEEERRRR",user)
+
 
     const {       
       firstName,
@@ -91,16 +90,15 @@ class UserProfileEdit extends Component {
     } = this.state;
 
     return (
-      <div className="level">
+      <div className="box level">
         
-        <h1 className="title level-item">Edit User Profile</h1>
+        <h1 className="title is-2 level-item">Edit User Profile</h1>
         <div className="field">
          
           <form onSubmit={this.handleFormSubmit}>
            
             <div>
               <label className="label">Last Name</label>
-              <div className="control">
               <input className="input"
                 type="text"
                 name="lastName"
@@ -108,10 +106,8 @@ class UserProfileEdit extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            </div>
             <div>
               <label className="label">First Name</label>
-              <div className="control">
               <input className="input"
                 type="text"
                 name="firstName"
@@ -119,10 +115,8 @@ class UserProfileEdit extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            </div>
             <div>
               <label className="label">Email</label>
-              <div className="control">
               <input className="input"
                 type="text"
                 name="email"
@@ -130,47 +124,43 @@ class UserProfileEdit extends Component {
                 // onChange={this.handleChange}
               />
             </div>
-            </div>
             <div>
               <label className="label">Location</label>
-              <div className="control">
-              <input className="input"
-                type="text"
-                name="location"
-                value={location}
-                onChange={this.handleChange}
-              />
+                  <input className="input"
+                    type="text"
+                    name="location"
+                    value={location}
+                    onChange={this.handleChange}
+                  />
             </div>
-            </div>
-            <div>
-              <label className="label">Skills</label>
-              <div className="control">
-              <div className="select">
-                <select name="skills" value={skills} onChange={this.handleChange} multiple>
-                  <option value="data">data</option>
-                  <option value="WebDev">WebDev</option>
-                  <option value="UXUI">UXUI</option>
-                </select>
-                </div>
-                </div>
-            </div>
-            <div>
-              <label className="label">Prefered Project Category</label>
-              <div className="control">
-              <div className="select">
-                <select name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
-                  <option value="NGO">NGO</option>
-                  <option value="Hackathon">Hackathon</option>
-                  <option value="Business">Business</option>
-                </select>
+
+            <div className="skill-project-select"> 
+              <div className="skill-project-select-item">
+                <label className="label">Skills</label>
+                  <div className="select is-multiple">
+                    <select size="3" name="skills" value={skills} onChange={this.handleChange} multiple>
+                      <option value="data">data</option>
+                      <option value="WebDev">WebDev</option>
+                      <option value="UXUI">UXUI</option>
+                    </select>
+                  </div>
+              </div>
+              
+              <div className="skill-project-select-item">
+                <label className="label">Prefered Projects</label>
+                <div className="select is-multiple">
+                  <select size="3" name="preferedProject" value={preferedProject} onChange={this.handleChange} multiple>
+                    <option value="NGO">NGO</option>
+                    <option value="Hackathon">Hackathon</option>
+                    <option value="Business">Business</option>
+                  </select>
                 </div>
               </div>
-
-            
             </div>
             
-            <div className="control">
-              <input className="button is-link" type="submit" value="Mutate" />
+                
+            <div className="field level-item button-padding">
+              <input className="button is-info is-outlined" type="submit" value="Mutate" />
             </div>
           
           </form>

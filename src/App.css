@@ -41,13 +41,13 @@ html, body {
 }
 
 /* Sign up page */
-.signup-select {
+.skill-project-select {
   display: flex;
   justify-content: space-evenly;
   padding: 1em;
 }
 
-.signup-select-item {
+.skill-project-select-item {
   display: flex;
   flex-direction: column;
 }
