@@ -56,3 +56,12 @@ html, body {
 .button-padding {
   padding: 1em;
 }
+
+/* Details */
+.detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  
+}

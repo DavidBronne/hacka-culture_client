@@ -58,24 +58,36 @@ class SeeUserDetail extends Component {
     
     render () {
         return (
-            <div className="level">
-                <h1 className="title level-item">See User Detail</h1>
+            <div className=" box level">
+                <h1 className="title is-2 level-item">See User Detail</h1>
+                <div className="box">
+                    <div className="detail">
+                        <h5> <b>FirstName: </b></h5>
+                        <p> {this.state.firstName}</p>
+                    </div>
+                    <div className="detail">
+                        <h5> <b>LastName: </b></h5>
+                        <p> {this.state.lastName}</p>
+                    </div>
+                    <div className="detail">
+                        <h5> <b>Email: </b></h5>
+                        <p> {this.state.email}</p>
+                    </div>
+                    <div className="detail">
+                        <h5> <b>Location: </b></h5>
+                        <p> {this.state.location}</p>
+                    </div>
+                    <div className="detail">
+                        <h5> <b>Skills: </b></h5>
+                        <p> {this.state.skills}</p>
+                    </div>
+                    <div className="detail">
+                        <h5> <b>Prefered Projects: </b></h5>
+                        <p> {this.state.preferedProject}</p>
+                    </div>
+                </div>
 
-                <h5>firstName</h5>
-                <p>{this.state.firstName}</p>
-                <h5>lastName</h5>
-                <p>{this.state.lastName}</p>
-                <h5>email</h5>
-                <p>{this.state.email}</p>
-                <h5>location</h5>
-                <p>{this.state.location}</p>
-                <h5>skills</h5>
-                <p>{this.state.skills}</p>
-                <h5>prefered Project</h5>
-                <p>{this.state.preferedProject}</p>
-
-
-                <h3 className="subtitle" >Initiator on Projects</h3>
+                <h3 className="subtitle is-3" >Initiator on Projects:</h3>
                     {
                         this.state.isLoading
                     ? null
@@ -86,7 +98,7 @@ class SeeUserDetail extends Component {
                         })
                     }
 
-                <h3 className="subtitle">Applied on Projects</h3>
+                <h3 className="subtitle is-3">Applied on Projects:</h3>
                     {
                         this.state.isLoading
                     ? null
@@ -97,7 +109,7 @@ class SeeUserDetail extends Component {
                         })
                     }
                 
-                <h3 className="subtitle">My accepted Projects</h3>
+                <h3 className="subtitle is-3">My accepted Projects:</h3>
                     {
                         this.state.isLoading
                     ? null
