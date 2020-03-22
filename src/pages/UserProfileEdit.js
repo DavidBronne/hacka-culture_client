@@ -135,6 +135,7 @@ class UserProfileEdit extends Component {
             </div>
 
             <div className="skill-project-select"> 
+              
               <div className="skill-project-select-item">
                 <label className="label">Skills</label>
                   <div className="select is-multiple">
@@ -156,6 +157,7 @@ class UserProfileEdit extends Component {
                   </select>
                 </div>
               </div>
+              
             </div>
             
                 
