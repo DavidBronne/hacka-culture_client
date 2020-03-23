@@ -81,7 +81,7 @@ class InitiatorAddProject extends Component {
         
 
         return (
-            <div className="level">
+            <div className="box notification level">
                 
                  
                 <h1 className="title level-item">Initiate a Project</h1>
@@ -123,39 +123,43 @@ class InitiatorAddProject extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <label className="label">#Data</label>
-                            <div className="control">
-                                <input className="input"
-                                    type="number"
-                                    name="requiredDataSkill"
-                                    value={requiredDataSkill}
-                                    onChange={this.handleChange}
-                                />
+                        
+                        <div className="skill-project-select">
+                            <div className="skill-project-select-item">
+                                <label className="label">#Data</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="number"
+                                        name="requiredDataSkill"
+                                        value={requiredDataSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="skill-project-select-item">
+                                <label className="label">#Webdev</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="number"
+                                        name="requiredWebdevSkill"
+                                        value={requiredWebdevSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="skill-project-select-item">
+                                <label className="label">#Uxui</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="number"
+                                        name="requiredUxuiSkill"
+                                        value={requiredUxuiSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <label className="label">#Webdev</label>
-                            <div className="control">
-                                <input className="input"
-                                    type="number"
-                                    name="requiredWebdevSkill"
-                                    value={requiredWebdevSkill}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div>
-                            <label className="label">#Uxui</label>
-                            <div className="control">
-                                <input className="input"
-                                    type="number"
-                                    name="requiredUxuiSkill"
-                                    value={requiredUxuiSkill}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
+                        
                         <div>
                             <label className="label">Location</label>
                             <div className="control">
@@ -189,12 +193,12 @@ class InitiatorAddProject extends Component {
                                 />
                             </div>
                         </div>
-                        <div className="field is-grouped">
+                        <div className="field level-item">
                             <div className="control">
-                                <input className="button is-link" type="submit" value="Initiate" />
+                                <input className="button is-info is-outlined" type="submit" value="Initiate" />
                             </div>
 
-                            <div className="control">
+                            <div className="control button-padding">
                                 <Link className="button is-link is-light" to={"/initiator-dashboard"}>Cancel</Link>
                             </div>
                         </div>
