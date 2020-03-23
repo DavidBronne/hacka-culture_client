@@ -11,7 +11,7 @@ class AppliedParticipantsCard extends Component{
         event.preventDefault();
         const userId = this.props._id
         const projectId = this.props.projectId
-        console.log('this.props.match.params', this.props.projectId)
+        // console.log('this.props.match.params', this.props.projectId)
         projectService.acceptParticipant(projectId, userId)
         .then((result) => console.log('result', result))
         .catch(error => console.log('error', error))

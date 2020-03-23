@@ -85,10 +85,10 @@ handleFormSubmit = event => {
     
     render () {
         return (
-            <div className="container is-fluid">
+            
                 <div className="level notification">   
 
-                    <h1 className="title is-2 level-item">Participant Edit Project</h1>
+                    <h1 className="title is-2 level-item">Application</h1>
                     
                     <div className="box">
                         
@@ -148,7 +148,7 @@ handleFormSubmit = event => {
                         </div>
                     </div>
 
-                    <h5 className="subtitle is-3">AppliedParticipants</h5>
+                    <h5 className="subtitle is-3">Applied</h5>
                     {
                         this.state.isLoading
                         ? null
@@ -158,7 +158,7 @@ handleFormSubmit = event => {
                             })
                     }
 
-                    <h3 className="subtitle is-3">Accepted participants</h3>
+                    <h3 className="subtitle is-3">Accepted</h3>
                         {
                             this.state.isLoading
                         ? null
@@ -170,7 +170,7 @@ handleFormSubmit = event => {
 
 
                 </div>
-            </div>
+            
         )
     }
 }

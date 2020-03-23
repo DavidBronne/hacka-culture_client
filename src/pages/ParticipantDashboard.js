@@ -33,9 +33,9 @@ class ParticipantDashboard extends Component {
     render () {
         return (
         
-        <div className="container is-fluid">
+        <div >
             <div className="notification level">
-                <h1 className="title is-2 level-item" >Participant Dashboard</h1>
+                <h1 className="title is-2 level-item" >Participant</h1>
 
                 <div className=" field level-item">
                     <div className="control">
@@ -45,7 +45,7 @@ class ParticipantDashboard extends Component {
                     </div>
                 </div>
                 
-                <h3 className="subtitle is-3" >My applied Projects:</h3>
+                <h3 className="subtitle is-3" >Applied</h3>
                     {
                         this.state.appliedOnProject.map( (project) => {
                             
@@ -53,7 +53,7 @@ class ParticipantDashboard extends Component {
                         })
                     }
 
-                <h3 className="subtitle is-3" >My accepted Projects:</h3>
+                <h3 className="subtitle is-3" >Accepted</h3>
 
                     {
                         this.state.acceptedOnProject.map( (project) => {

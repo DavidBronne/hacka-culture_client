@@ -92,7 +92,7 @@ class UserProfileEdit extends Component {
     return (
       <div className="box level">
         
-        <h1 className="title is-2 level-item">Edit User Profile</h1>
+        <h1 className="title is-2 level-item">User Profile</h1>
         <div className="field">
          
           <form onSubmit={this.handleFormSubmit}>

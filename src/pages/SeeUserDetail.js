@@ -59,7 +59,7 @@ class SeeUserDetail extends Component {
     render () {
         return (
             <div className=" box notification level">
-                <h1 className="title is-2 level-item">See User Detail</h1>
+                <h1 className="title is-2 level-item">User Detail</h1>
                 <div className="box">
                     <div className="detail">
                         <h5> <b>FirstName: </b></h5>
@@ -82,12 +82,12 @@ class SeeUserDetail extends Component {
                         <p> {this.state.skills}</p>
                     </div>
                     <div className="detail">
-                        <h5> <b>Prefered Projects: </b></h5>
+                        <h5> <b>Pref. Proj.: </b></h5>
                         <p> {this.state.preferedProject}</p>
                     </div>
                 </div>
 
-                <h3 className="subtitle is-3" >Initiator on Projects:</h3>
+                <h3 className="subtitle is-3" >Initiator</h3>
                     {
                         this.state.isLoading
                     ? null
@@ -98,7 +98,7 @@ class SeeUserDetail extends Component {
                         })
                     }
 
-                <h3 className="subtitle is-3">Applied on Projects:</h3>
+                <h3 className="subtitle is-3">Applied</h3>
                     {
                         this.state.isLoading
                     ? null
@@ -109,7 +109,7 @@ class SeeUserDetail extends Component {
                         })
                     }
                 
-                <h3 className="subtitle is-3">My accepted Projects:</h3>
+                <h3 className="subtitle is-3">Accepted</h3>
                     {
                         this.state.isLoading
                     ? null

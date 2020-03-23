@@ -114,7 +114,7 @@ class InitiatorEditProject extends Component {
         return (
     
             <div className="level box notification">
-                <h1 className="title is-2 level-item">Initiator Edit Project</h1>
+                <h1 className="title is-2 level-item">Edit Project</h1>
                 <div className="field">
                     <form onSubmit={this.handleFormSubmit}>
                         <div>

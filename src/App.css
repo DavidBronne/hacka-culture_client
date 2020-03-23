@@ -6,6 +6,11 @@
   --light-blue: #8BB7D1;
 
 } */
+@media screen and (min-width: 769px){
+  .level {
+    display: block !important; 
+  }
+}
 
 html, body {
   margin: 0;

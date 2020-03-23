@@ -41,10 +41,10 @@ class InitiatorDashboard extends Component {
 
     render() {
         return (
-            <div className="box">
+
                 <div className="level notification">
 
-                    <h1 className="title is-2 level-item" >Initiator Dashboard</h1>
+                    <h1 className="title is-2 level-item" >Initiator</h1>
 
                     <div className="level-item">
                         <Link className="button is-info is-outlined" to="/initiator-add-project">
@@ -52,7 +52,7 @@ class InitiatorDashboard extends Component {
                         </Link>
                     </div>
 
-                    <h2 className="subtitle is-3" >My Projects as Initiator</h2>
+                    <h2 className="subtitle is-3" >My Projects</h2>
     
                     { 
                         this.state.isLoading 
@@ -64,7 +64,7 @@ class InitiatorDashboard extends Component {
                     }
     
                 </div>
-            </div>
+
         )
     }
  }

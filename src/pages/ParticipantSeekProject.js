@@ -107,7 +107,7 @@ class ParticipantSeekProject extends Component {
         
 
         return (
-            <div className="container is-fluid">
+            
                 <div className="level notification">
                     <h1 className="title is-2 level-item">Project Search</h1>
                     <div className="field">
@@ -218,7 +218,7 @@ class ParticipantSeekProject extends Component {
                     }
                 </div>
                 </div>
-            </div>
+            
         )
     }    
 }
