@@ -41,24 +41,29 @@ class InitiatorDashboard extends Component {
 
     render() {
         return (
-            <div className="level">
-                <h1 className="title level-item" >Initiator Dashboard</h1>
+            <div className="box">
+                <div className="level notification">
 
-                <Link className="level-item" to="/initiator-add-project">
-                    <h4>Initiate a Project</h4>
-                </Link>
+                    <h1 className="title is-2 level-item" >Initiator Dashboard</h1>
 
-                <h2 className="subtitle" >My Projects as Initiator</h2>
- 
-                { 
-                    this.state.isLoading 
-                    ? null 
-                    : this.state.projects.map( (project) => {
-                        console.log('PROJECT', project)
-                        return <InitiatorDashboardCard key={ project._id } {...project}/>
-                    })
-                }
-   
+                    <div className="level-item">
+                        <Link className="button is-info is-outlined" to="/initiator-add-project">
+                            <h4>Initiate a Project</h4>
+                        </Link>
+                    </div>
+
+                    <h2 className="subtitle is-3" >My Projects as Initiator</h2>
+    
+                    { 
+                        this.state.isLoading 
+                        ? null 
+                        : this.state.projects.map( (project) => {
+                            console.log('PROJECT', project)
+                            return <InitiatorDashboardCard key={ project._id } {...project}/>
+                        })
+                    }
+    
+                </div>
             </div>
         )
     }
