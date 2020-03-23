@@ -113,8 +113,8 @@ class InitiatorEditProject extends Component {
     render () {
         return (
     
-            <div className="level">
-                <h1 className="title level-item">Initiator Edit Project</h1>
+            <div className="level box notification">
+                <h1 className="title is-2 level-item">Initiator Edit Project</h1>
                 <div className="field">
                     <form onSubmit={this.handleFormSubmit}>
                         <div>
@@ -148,39 +148,44 @@ class InitiatorEditProject extends Component {
                                 </select>
                             </div>
                         </div>
-                        <div>
-                            <label className="label">Required Data Skill</label>
-                            <div className="control">
-                                <input className="input"
-                                    type="text"
-                                    name="requiredDataSkill"
-                                    value={this.state.requiredDataSkill}
-                                    onChange={this.handleChange}
-                                />
+                        
+                        <div className="skill-project-select">
+                            <div className="skill-project-select-item">
+                                <label className="label">Data</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="text"
+                                        name="requiredDataSkill"
+                                        value={this.state.requiredDataSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="skill-project-select-item">
+                                <label className="label">Webdev</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="text"
+                                        name="requiredWebdevSkill"
+                                        value={this.state.requiredWebdevSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="skill-project-select-item">
+                                <label className="label">UxUi</label>
+                                <div className="control">
+                                    <input className="input"
+                                        type="text"
+                                        name="requiredUxuiSkill"
+                                        value={this.state.requiredUxuiSkill}
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <label className="label">Required Webdev Skill</label>
-                            <div className="control">
-                                <input className="input"
-                                    type="text"
-                                    name="requiredWebdevSkill"
-                                    value={this.state.requiredWebdevSkill}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div >
-                            <label className="label">Required Uxui Skill</label>
-                            <div className="control">
-                                <input className="input"
-                                    type="text"
-                                    name="requiredUxuiSkill"
-                                    value={this.state.requiredUxuiSkill}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
+                        
+                        
                         <div>
                             <label className="label">Location</label>
                             <div className="control">
@@ -214,13 +219,15 @@ class InitiatorEditProject extends Component {
                                 />
                             </div>    
                         </div>
-
-                        <input type="submit" value="Save" />
+                        
+                        <div className="control level-item button-padding">
+                                <input className="button is-info is-outlined" type="submit" value="Save" />
+                        </div>
 
                     </form>
                 </div>
                 
-                <h3 className="subtitle  is-4">Applicant</h3>
+                <h3 className="subtitle is-3">Applicant</h3>
                     {
                         this.state.isLoading
                     ? null
@@ -230,7 +237,7 @@ class InitiatorEditProject extends Component {
                     })
                     }
                     
-                <h3 className="subtitle is-4">Accepted</h3>
+                <h3 className="subtitle is-3">Accepted</h3>
                     {
                         this.state.isLoading
                     ? null

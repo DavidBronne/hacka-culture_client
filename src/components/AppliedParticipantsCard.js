@@ -27,34 +27,34 @@ class AppliedParticipantsCard extends Component{
         return (
 
             <div>
-                <Link to={`/see-user-detail/${this.props._id}`}>
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="media">
-                                        <div className="media-left">
-                                            <figure className="image is-48x48">
-                                                <img src="https://secondchancetinyhomes.org/wp-content/uploads/2016/09/empty-profile.png" alt="Placeholder image"></img>
-                                            </figure>
-                                        </div>
-                                        <div className="media-content">
-                                            <p className="title is-5">{ this.props.firstName }</p>
-                                            <p className="subtitle is-6">{ this.props.skills }</p>
-                                        </div>
-                                    </div>
-                                </div>
+                <div className="card">
+                    <div className="card-content apllied-participant-card">
+                        <Link to={`/see-user-detail/${this.props._id}`}>
+                                            <div className="media">
+                                                <div className="media-left">
+                                                    <figure className="image is-48x48">
+                                                        <img src="https://secondchancetinyhomes.org/wp-content/uploads/2016/09/empty-profile.png" alt="Placeholder image"></img>
+                                                    </figure>
+                                                </div>
+                                                <div className="media-content">
+                                                    <p className="title is-5">{ this.props.firstName }</p>
+                                                    <p className="subtitle is-6">{ this.props.skills }</p>
+                                                </div>
+                                            </div>
+                        </Link>
+                        <div className="content field">
+                            <div className="control">
+                                <form onSubmit={this.acceptSubmit}>
+                                    <button className="button is-info is-outlined" type="submit">Accept</button>
+                                </form>
+                                <form onSubmit={this.declineSubmit}>
+                                    <button className="button is-link is-light" type="submit">Decline</button>
+                                </form>
+                            </div>
                         </div>
-                    </Link>
-                                    <div className="content field is-grouped">
-                                        <div className="control">
-                                            <form onSubmit={this.acceptSubmit}>
-                                                <button className="button is-link" type="submit">Accept</button>
-                                            </form>
 
-                                            <form onSubmit={this.declineSubmit}>
-                                                <button className="button is-link is-light" type="submit">Decline</button>
-                                            </form>
-                                        </div>
-                                    </div>
+                    </div>
+                </div>
             </div>
         )
     }

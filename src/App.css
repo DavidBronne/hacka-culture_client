@@ -65,3 +65,10 @@ html, body {
   align-items: baseline;
   
 }
+
+/* Applied participant card */
+.apllied-participant-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
