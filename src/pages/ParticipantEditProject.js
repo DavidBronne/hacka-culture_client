@@ -85,66 +85,91 @@ handleFormSubmit = event => {
     
     render () {
         return (
-            <div className="level">
-                <h1 className="title level-item">Participant Edit Project</h1>
-                
-                <h3 className="subtitle">Project Details</h3>
+            <div className="container is-fluid">
+                <div className="level notification">   
 
-                <h5>Project Name</h5>
-                <p>{this.state.projectName}</p>
-                <h5>description</h5>
-                <p>{this.state.description}</p>
-                
-                <Link to={`/see-user-detail/${this.state.initiator._id}`}>
-                <h5>initiator</h5>
-                <p>{this.state.initiator.firstName}</p>
-                </Link>
+                    <h1 className="title is-2 level-item">Participant Edit Project</h1>
+                    
+                    <div className="box">
+                        
+                        <h3 className="subtitle is-3">Project Details</h3>
 
-                <h5>projectCategory</h5>
-                <p>{this.state.projectCategory}</p>
-                <h5>requiredDataSkill</h5>
-                <p>{this.state.requiredDataSkill}</p>
-                <h5>requiredWebdevSkill</h5>
-                <p>{this.state.requiredWebdevSkill}</p>
-                <h5>requiredUxuiSkill</h5>
-                <p>{this.state.requiredUxuiSkill}</p>
-                <h5>githubUrl</h5>
-                <p>{this.state.githubUrl}</p>
-                <h5 className="subtitle">appliedParticipants</h5>
-                {
-                    this.state.isLoading
-                    ? null
-                    :
-                    this.state.appliedParticipants.map((user) => {
-                        return <Link to={`/see-user-detail/${user._id}`}>
-                        {user.firstName}
-                        </Link>})
-                }
+                        <div className="detail">
+                            <h5> <b>Project Name: </b> </h5>
+                            <p>{this.state.projectName}</p>
+                        </div>
+                        <div className="detail">
+                            <h5> <b>Description: </b> </h5>
+                            <p>{this.state.description}</p>
+                        </div>
+                        <div className="detail">
+                            <h5> <b>Initiator: </b> </h5>
+                            <p>{this.state.initiator.firstName}</p>
+                        </div>
 
-                <div className="field is-grouped">
-                    <div className="control">
-                        <form onSubmit={this.handleFormSubmit}>
-                            <button  className="button is-link" type="submit">Apply</button>
-                        </form>
-                    </div>
-                    <div className="control">
-                        <Link  className="button is-link is-light" to="/participant-seek-project">
-                            <h4>Seek Project</h4>
+                        <Link to={`/see-user-detail/${this.state.initiator._id}`}>
+                            <div className="detail">
+                                <h5> <b>Project Name: </b> </h5>
+                                <p>{this.state.projectName}</p>
+                            </div>
                         </Link>
-                    </div>
-                </div>
 
-                <h3 className="subtitle">Accepted participants</h3>
+
+                        <div className="detail">
+                            <h5> <b>Data: </b> </h5>
+                            <p>{this.state.requiredDataSkill}</p>
+                        </div>
+                        <div className="detail">
+                            <h5> <b>Webdev: </b> </h5>
+                            <p>{this.state.requiredWebdevSkill}</p>
+                        </div>
+                        <div className="detail">
+                            <h5> <b>UxUi: </b> </h5>
+                            <p>{this.state.requiredUxuiSkill}</p>
+                        </div>
+                        
+                        <div className="detail">
+                            <h5> <b>Github Url: </b> </h5>
+                            <p>{this.state.githubUrl}</p>
+                        </div>
+                       
+                    </div>
+
+                    <div className="field level-item">
+                        <div className="control">
+                            <form onSubmit={this.handleFormSubmit}>
+                                <button  className="button is-info is-outlined" type="submit">Apply</button>
+                            </form>
+                        </div>
+                        <div className="control level-item">
+                            <Link  className="button is-link is-light" to="/participant-seek-project">
+                                <h4>Seek Project</h4>
+                            </Link>
+                        </div>
+                    </div>
+
+                    <h5 className="subtitle is-3">AppliedParticipants</h5>
                     {
                         this.state.isLoading
-                    ? null
-                    :
-                    this.state.acceptedParticipants.map( (user) => {  
-                        return <AcceptedParticipantsCard key={user._id} {...user}/>
-                    })
+                        ? null
+                        :
+                        this.state.appliedParticipants.map((user) => {
+                            return <AcceptedParticipantsCard key={user._id} {...user}/>
+                            })
                     }
 
+                    <h3 className="subtitle is-3">Accepted participants</h3>
+                        {
+                            this.state.isLoading
+                        ? null
+                        :
+                        this.state.acceptedParticipants.map( (user) => {  
+                            return <AcceptedParticipantsCard key={user._id} {...user}/>
+                        })
+                        }
 
+
+                </div>
             </div>
         )
     }

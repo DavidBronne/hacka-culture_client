@@ -201,7 +201,7 @@ class ParticipantSeekProject extends Component {
                     
                     </form>
                 
-                    <h3>Result</h3>
+                    <h3 className="subtitle is-3">Result</h3>
                     {console.log('this.state.projects in render',this.state.projects)}
                     { 
                         
